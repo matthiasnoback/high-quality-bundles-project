@@ -6,7 +6,7 @@
 
 2. When asked, supply the requested information concerning the MySQL database (make sure you run a MySQL server). You can skip the mail settings.
 
-3. Do whatever is needed to get your file permissions right (see also [Setting up Permissions](http://symfony.com/doc/current/book/installation.html).
+3. Do whatever is needed to get your file permissions right (see also [Setting up Permissions](http://symfony.com/doc/current/book/installation.html)).
 
 4. Then see if everything works:
 
