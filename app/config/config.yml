@@ -2,6 +2,10 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+parameters:
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
+
 framework:
     #esi:             ~
     #translator:      { fallback: "%locale%" }
