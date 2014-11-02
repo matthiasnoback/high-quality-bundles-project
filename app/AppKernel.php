@@ -16,6 +16,12 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Matthias\Bundle\ConsoleCommandGeneratorBundle\MatthiasConsoleCommandGeneratorBundle(),
+            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+            new Traditional\Bundle\UserBundle\TraditionalUserBundle(),
+            new Modern\User\Symfony\UserBundle\ModernUserBundle(),
+            new Matthias\SimpleBus\SymfonyBundle\MatthiasCommandBusBundle(),
+            new Matthias\SimpleBus\SymfonyBundle\MatthiasEventBusBundle(),
+            new Matthias\SimpleBus\SymfonyBundle\MatthiasDoctrineOrmEventBusBridgeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
