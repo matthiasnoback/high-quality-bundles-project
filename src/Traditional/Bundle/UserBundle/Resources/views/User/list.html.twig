@@ -1,0 +1,17 @@
+<p><a href="{{ path('traditional_user_create') }}">Create user</a></p>
+
+<table>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.email }}</td>
+            <td>{{ user.country }}</td>
+            <td>
+                <ul>
+                {% for phoneNumber in user.phoneNumbers %}
+                    <li>{{ phoneNumber }}</li>
+                {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

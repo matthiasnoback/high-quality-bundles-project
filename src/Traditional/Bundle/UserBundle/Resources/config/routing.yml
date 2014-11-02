@@ -1,0 +1,3 @@
+TraditionalUserBundle_controllers:
+    resource: @TraditionalUserBundle/Controller
+    type: annotation
