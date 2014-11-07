@@ -24,6 +24,4 @@ app/console
 > app/console server:run
 > ```
 >
-> If you run PHP 5.3, you need to manually set up a virtual host for this project.
->
-> In the end be sure to check if everything works. When you request `/app_dev.php` in the browser you should see a nicely styled 404 error page from Symfony.
+> Check if everything works. When you request `http://127.0.0.1:8000/` in the browser you should see a nicely styled 404 error page from Symfony.
