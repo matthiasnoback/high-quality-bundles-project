@@ -18,7 +18,7 @@ class AppKernel extends Kernel
             new Matthias\Bundle\ConsoleCommandGeneratorBundle\MatthiasConsoleCommandGeneratorBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Traditional\Bundle\UserBundle\TraditionalUserBundle(),
-            new Modern\User\Symfony\UserBundle\ModernUserBundle(),
+            //new Modern\User\Symfony\UserBundle\ModernUserBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusEventBusBundle(),
             new SimpleBus\SymfonyBridge\DoctrineOrmBridgeBundle()
