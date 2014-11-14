@@ -29,7 +29,8 @@
         "simple-bus/event-bus": "~1.0",
         "simple-bus/command-event-bridge": "~1.0",
         "simple-bus/doctrine-orm-bridge": "~1.0",
-        "simple-bus/symfony-bridge": "~1.0"
+        "simple-bus/symfony-bridge": "~1.0",
+        "rhumsaa/uuid": "~2.7"
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7"

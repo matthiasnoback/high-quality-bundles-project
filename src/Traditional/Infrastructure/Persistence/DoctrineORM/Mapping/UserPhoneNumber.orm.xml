@@ -1,0 +1,12 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                       https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="Traditional\Core\Model\UserPhoneNumber" table="traditional_user_phonenumber">
+        <id name="id" type="integer" column="id"><generator strategy="AUTO"/></id>
+        <embedded name="phoneNumber" class="PhoneNumber"/>
+        <many-to-one target-entity="Traditional\Core\Model\User" field="user">
+
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

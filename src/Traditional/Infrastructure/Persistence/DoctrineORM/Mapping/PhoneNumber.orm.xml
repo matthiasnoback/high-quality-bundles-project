@@ -1,0 +1,10 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                       https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <embeddable name="Traditional\Core\Model\PhoneNumber">
+        <field name="countryCode"/>
+        <field name="areaCode"/>
+        <field name="lineNumber"/>
+    </embeddable>
+</doctrine-mapping>

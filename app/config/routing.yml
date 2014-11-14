@@ -1,5 +1,5 @@
 TraditionalUserBundle:
-    resource: "@TraditionalUserBundle/Resources/config/routing.yml"
+    resource: "@TraditionalUserBundle/routing.yml"
     prefix: /traditional
 
 #ModernUserBundle:

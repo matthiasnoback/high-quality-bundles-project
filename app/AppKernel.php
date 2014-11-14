@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Matthias\Bundle\ConsoleCommandGeneratorBundle\MatthiasConsoleCommandGeneratorBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Traditional\Bundle\UserBundle\TraditionalUserBundle(),
+            new \Traditional\Infrastructure\Configuration\TraditionalUserBundle(),
             //new Modern\User\Symfony\UserBundle\ModernUserBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusEventBusBundle(),

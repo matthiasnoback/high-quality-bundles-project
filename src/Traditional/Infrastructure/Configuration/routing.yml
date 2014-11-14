@@ -1,0 +1,9 @@
+user_list:
+    path: /user/list
+    defaults:
+        _controller: user_list_controller:__invoke
+
+user_register:
+    path: /user/register
+    defaults:
+        _controller: user_register_controller:__invoke

@@ -1,0 +1,52 @@
+services:
+    register_user_command_handler:
+        class: Traditional\Core\User\Register\RegisterUserCommandHandler
+        arguments:
+            - @doctrine.orm.entity_manager
+        tags:
+            - { name: command_handler, handles: register_user }
+
+    send_welcome_mail_when_user_registered:
+        class: Traditional\Core\User\Register\SendWelcomeMailWhenUserRegistered
+        arguments:
+            - @command_bus
+        tags:
+            - { name: event_handler, handles: user_registered }
+
+    send_welcome_mail_command_handler:
+        class: Traditional\Core\User\Register\SendWelcomeMailCommandHandler
+        arguments:
+            - @user_repository
+            - @mailer
+        tags:
+            - { name: command_handler, handles: send_welcome_mail }
+
+    user_repository:
+        class: Traditional\Infrastructure\Persistence\DoctrineORM\UserRepository
+        factory_service: doctrine
+        factory_method: getRepository
+        arguments:
+            - Traditional\Core\Model\User
+
+    user_list_controller:
+        class: Traditional\Infrastructure\UserInterface\Web\Controller\User\ListAction
+        arguments:
+            - @user_repository
+            - @templating
+
+    user_register_controller:
+        class: Traditional\Infrastructure\UserInterface\Web\Controller\User\Register
+        arguments:
+            - @user_repository
+            - @command_bus
+            - @templating
+            - @form.factory
+            - @router
+
+    register_user_console_command:
+        class: Traditional\Infrastructure\UserInterface\Cli\RegisterUserConsoleCommand
+        arguments:
+            - @validator
+            - @command_bus
+        tags:
+            - { name: console.command }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\DependencyInjection;
+namespace Traditional\Infrastructure\Configuration;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -11,7 +11,7 @@ class UserExtension extends Extension
 {
     public function load(array $config, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__));
         $loader->load('services.yml');
     }
 }
