@@ -17,11 +17,11 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Matthias\Bundle\ConsoleCommandGeneratorBundle\MatthiasConsoleCommandGeneratorBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Traditional\Bundle\UserBundle\TraditionalUserBundle(),
-            //new Modern\User\Symfony\UserBundle\ModernUserBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusEventBusBundle(),
-            new SimpleBus\SymfonyBridge\DoctrineOrmBridgeBundle()
+            new SimpleBus\SymfonyBridge\DoctrineOrmBridgeBundle(),
+            new Traditional\Bundle\UserBundle\TraditionalUserBundle(),
+//            new Modern\User\Symfony\UserBundle\ModernUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
