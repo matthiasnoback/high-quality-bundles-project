@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new SimpleBus\SymfonyBridge\SimpleBusEventBusBundle(),
             new SimpleBus\SymfonyBridge\DoctrineOrmBridgeBundle(),
             new Traditional\Bundle\UserBundle\TraditionalUserBundle(),
+            new Matthias\SymfonyConsoleForm\Bundle\SymfonyConsoleFormBundle()
 //            new Modern\User\Symfony\UserBundle\ModernUserBundle(),
         );
 

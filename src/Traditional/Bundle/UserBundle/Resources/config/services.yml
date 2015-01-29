@@ -1,0 +1,35 @@
+services:
+    register_user_handler:
+        class: Traditional\Bundle\UserBundle\Command\RegisterUserHandler
+        arguments:
+            - @user_repository
+        tags:
+            - { name: command_handler, handles: register_user }
+
+    user_repository:
+        class: Traditional\Bundle\UserBundle\Entity\DoctrineUserRepository
+        factory: [@doctrine, getRepository]
+        arguments:
+            - Traditional\Bundle\UserBundle\Entity\User
+
+    when_user_registered_send_welcome_mail_subscriber:
+        class: Traditional\Bundle\UserBundle\Event\WhenUserRegisteredSendWelcomeMail
+        arguments:
+            - @command_bus
+        tags:
+            - { name: event_subscriber, subscribes_to: user_registered }
+
+    send_welcome_mail_handler:
+        class: Traditional\Bundle\UserBundle\Command\SendWelcomeMailHandler
+        arguments:
+            - @mailer
+        tags:
+            - { name: command_handler, handles: send_welcome_mail }
+
+    logging_middleware:
+        class: Traditional\Bundle\UserBundle\Bus\LoggingMiddleware
+        arguments:
+            - @logger
+        tags:
+            - { name: command_bus_middleware, priority: -999 }
+            - { name: event_bus_middleware, priority: -999 }

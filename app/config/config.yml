@@ -59,6 +59,10 @@ doctrine:
         # if using pdo_sqlite as your database driver, add the path in parameters.yml
         # e.g. database_path: "%kernel.root_dir%/data/data.db3"
         # path:     "%database_path%"
+        types:
+            email_address: Traditional\Bundle\UserBundle\Type\EmailAddressType
+        mapping_types:
+            email_address: string
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true

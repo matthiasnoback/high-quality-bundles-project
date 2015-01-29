@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
+use Traditional\Bundle\UserBundle\Command\RegisterUser;
 use Traditional\Bundle\UserBundle\Entity\PhoneNumber;
 use Traditional\Bundle\UserBundle\Entity\User;
 use Traditional\Bundle\UserBundle\Form\CreateUserType;
@@ -40,28 +41,19 @@ class UserController extends Controller
      */
     public function createAction(Request $request)
     {
-        $user = new User();
-
-        $form = $this->createForm(new CreateUserType(), $user);
+        $form = $this->createForm(new CreateUserType());
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $defaultPhoneNumber = new PhoneNumber();
-            $defaultPhoneNumber->setCountryCode('0031');
-            $defaultPhoneNumber->setAreaCode('030');
-            $defaultPhoneNumber->setLineNumber('1234567');
-            $user->addPhoneNumber($defaultPhoneNumber);
+            $command = $form->getData();
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
+            $this->get('command_bus')->handle($command);
 
-            $message = \Swift_Message::newInstance('Welcome', 'Yes, welcome');
-            $message->setTo($user->getEmail());
-            //$this->get('mailer')->send($message);
-
-            return $this->redirect($this->generateUrl('traditional_user_list'));
+            return $this->redirect($this->generateUrl(
+                'traditional_user_list',
+                ['id' => $command->id()]
+            ));
         }
 
         return array(
