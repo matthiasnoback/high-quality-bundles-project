@@ -1,3 +1,8 @@
 TraditionalUserBundle_controllers:
     resource: @TraditionalUserBundle/Controller
     type: annotation
+
+traditional_user_list:
+    path: /user/list
+    defaults:
+        _controller: user_list_controller:__invoke

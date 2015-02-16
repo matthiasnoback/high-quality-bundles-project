@@ -1,0 +1,39 @@
+services:
+    create_user_form_type:
+        class: Traditional\Bundle\UserBundle\Form\CreateUserType
+        arguments:
+            - @user_repository
+        tags:
+            - { name: form.type, alias: create_user }
+
+    user_list_controller:
+        class: Traditional\Bundle\UserBundle\Controller\User\ListAction
+        arguments:
+            - @user_repository
+
+    user_repository:
+        class: Traditional\Bundle\UserBundle\Entity\DoctrineUserRepository
+        arguments:
+            - @doctrine
+
+    register_user_handler:
+        class: Traditional\Bundle\UserBundle\Command\RegisterUserHandler
+        arguments:
+            - @user_repository
+        tags:
+            - { name: command_handler, handles: register_user }
+
+    when_user_registered_send_welcome_mail:
+        class: Traditional\Bundle\UserBundle\Event\WhenUserRegisteredSendWelcomeMail
+        arguments:
+            - @mailer
+        tags:
+            - { name: event_subscriber, subscribes_to: user_registered }
+
+    logging_middleware:
+        class: Traditional\Bundle\UserBundle\Event\LoggingMiddleware
+        arguments:
+            - @logger
+        tags:
+            - { name: command_bus_middleware, priority: 150 }
+            - { name: event_bus_middleware, priority: 150 }

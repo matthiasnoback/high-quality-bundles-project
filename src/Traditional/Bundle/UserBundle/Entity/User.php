@@ -2,24 +2,30 @@
 
 namespace Traditional\Bundle\UserBundle\Entity;
 
+use Assert\Assertion;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use SimpleBus\Message\Recorder\ContainsRecordedMessages;
+use SimpleBus\Message\Recorder\PrivateMessageRecorderCapabilities;
+use Traditional\Bundle\UserBundle\Event\UserRegistered;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="traditional_user")
  */
-class User
+class User implements ContainsRecordedMessages
 {
+    use PrivateMessageRecorderCapabilities;
+
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="string")
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="email", length=255)
      */
     private $email;
 
@@ -38,9 +44,23 @@ class User
      */
     private $phoneNumbers;
 
-    public function __construct()
+    private function __construct($id, Email $email, $password, $country)
     {
+        $this->id = $id;
         $this->phoneNumbers = new ArrayCollection();
+        $this->setEmail($email);
+        $this->setPassword($password);
+        $this->setCountry($country);
+    }
+
+    public static function register($id, Email $email, $password, $country)
+    {
+        $user = new self($id, $email, $password, $country);
+
+        $event = new UserRegistered($user);
+        $user->record($event);
+
+        return $user;
     }
 
     public function getId()
@@ -58,7 +78,7 @@ class User
         return $this->email;
     }
 
-    public function setEmail($email)
+    private function setEmail(Email $email)
     {
         $this->email = $email;
     }
@@ -68,8 +88,11 @@ class User
         return $this->password;
     }
 
-    public function setPassword($password)
+    private function setPassword($password)
     {
+        Assertion::string($password);
+        Assertion::notEmpty($password);
+
         $this->password = $password;
     }
 
@@ -78,8 +101,10 @@ class User
         return $this->country;
     }
 
-    public function setCountry($country)
+    private function setCountry($country)
     {
+        Assertion::string($country);
+
         $this->country = $country;
     }
 

@@ -23,3 +23,6 @@ monolog:
 
 assetic:
     use_controller: true
+
+swiftmailer:
+    disable_delivery: true

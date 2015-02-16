@@ -1,8 +1,11 @@
+<html>
+<body>
 <p><a href="{{ path('traditional_user_create') }}">Create user</a></p>
 
 <table>
     {% for user in users %}
         <tr>
+            <td>{{ user.id }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.country }}</td>
             <td>
@@ -15,3 +18,5 @@
         </tr>
     {% endfor %}
 </table>
+</body>
+</html>

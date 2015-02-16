@@ -2,14 +2,15 @@
 
 namespace Traditional\Bundle\UserBundle\Controller;
 
+use JMS\Serializer\SerializerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Traditional\Bundle\UserBundle\Entity\PhoneNumber;
-use Traditional\Bundle\UserBundle\Entity\User;
-use Traditional\Bundle\UserBundle\Form\CreateUserType;
+use Symfony\Component\HttpFoundation\Response;
+use Traditional\Bundle\UserBundle\Command\RegisterUser;
 
 /**
  * @Route("/user")
@@ -17,55 +18,48 @@ use Traditional\Bundle\UserBundle\Form\CreateUserType;
 class UserController extends Controller
 {
     /**
-     * @Route("/list", name="traditional_user_list")
-     * @Template
-     */
-    public function listAction()
-    {
-        $users = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('Traditional\Bundle\UserBundle\Entity\User')
-            ->findAll();
-
-        return array(
-            'users' => $users
-        );
-    }
-
-    /**
      * @Route("/create", name="traditional_user_create")
      * @Method({"GET", "POST"})
      * @Template
      */
     public function createAction(Request $request)
     {
-        $user = new User();
-
-        $form = $this->createForm(new CreateUserType(), $user);
+        $form = $this->createForm('create_user');
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $defaultPhoneNumber = new PhoneNumber();
-            $defaultPhoneNumber->setCountryCode('0031');
-            $defaultPhoneNumber->setAreaCode('030');
-            $defaultPhoneNumber->setLineNumber('1234567');
-            $user->addPhoneNumber($defaultPhoneNumber);
+            $command = $form->getData();
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
+            $this->get('command_bus')->handle($command);
 
-            $message = \Swift_Message::newInstance('Welcome', 'Yes, welcome');
-            $message->setTo($user->getEmail());
-            //$this->get('mailer')->send($message);
-
-            return $this->redirect($this->generateUrl('traditional_user_list'));
+            return $this->redirect($this->generateUrl('traditional_user_list', ['id' => $command->id]));
         }
 
         return array(
             'form' => $form->createView()
         );
+    }
+
+    /**
+     * @Route("/api/create", name="traditional_user_api_create")
+     * @Method({"POST"})
+     */
+    public function apiCreateAction(Request $request)
+    {
+        $serializer = $this->get('jms_serializer');
+        /** @var $serializer SerializerInterface */
+        $command = $serializer->deserialize($request->getContent(), RegisterUser::class, 'json');
+        $constraintViolationList = $this->get('validator')->validate($command);
+
+        if (count($constraintViolationList) === 0) {
+            $this->get('command_bus')->handle($command);
+
+            return new JsonResponse(null, 201);
+        }
+
+        return new Response(
+            $serializer->serialize($constraintViolationList, 'json')
+        , 400);
     }
 }
