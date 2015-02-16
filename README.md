@@ -16,12 +16,21 @@ composer create-project matthiasnoback/high-quality-bundles-project [project-dir
 app/console
 ```
 
-5 Configure the web server to serve the `/web` directory of this project.
+5. Create the database and the database schema:
 
-> If you run PHP 5.4 or higher, you don't need to configure the web server for this project, because you can use the Symfony command:
+```
+app/console doctrine:database:create
+app/console doctrine:schema:create
+```
+
+6. Configure the web server to serve the `/web` directory of this project.
+
+> If you run PHP 5.4 or higher, you don't need to configure the web server for this project, because you can use the
+> Symfony command:
 >
 > ```
 > app/console server:run
 > ```
 >
-> Check if everything works. When you request `http://127.0.0.1:8000/` in the browser you should see a nicely styled 404 error page from Symfony.
+> Check if everything works. When you request `http://127.0.0.1:8000/` in the browser you should see a list of existing
+> users.

@@ -56,19 +56,15 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
-        # if using pdo_sqlite as your database driver, add the path in parameters.yml
-        # e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        # path:     "%database_path%"
+        #types:
+        #    type_name:
+        #        class: Fully\Qualified\Class\Name\Of\Type
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
 swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
-    spool:     { type: memory }
+    disable_delivery: true
 
 command_bus:
     command_name_resolver_strategy: named_message

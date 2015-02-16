@@ -2,7 +2,6 @@
 
 namespace Traditional\Bundle\UserBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,16 +31,6 @@ class User
      * @ORM\Column(type="string")
      */
     private $country;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Traditional\Bundle\UserBundle\Entity\PhoneNumber", orphanRemoval=true, cascade={"persist", "remove"}, mappedBy="user")
-     */
-    private $phoneNumbers;
-
-    public function __construct()
-    {
-        $this->phoneNumbers = new ArrayCollection();
-    }
 
     public function getId()
     {
@@ -81,16 +70,5 @@ class User
     public function setCountry($country)
     {
         $this->country = $country;
-    }
-
-    public function getPhoneNumbers()
-    {
-        return $this->phoneNumbers;
-    }
-
-    public function addPhoneNumber(PhoneNumber $phoneNumber)
-    {
-        $phoneNumber->setUser($this);
-        $this->phoneNumbers->add($phoneNumber);
     }
 }
