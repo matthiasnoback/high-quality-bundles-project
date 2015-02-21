@@ -13,5 +13,10 @@ class UserExtension extends Extension
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
+
+        $environment = $container->getParameter('kernel.environment');
+        if ($environment === 'test') {
+            $loader->load('test_services.yml');
+        }
     }
 }
