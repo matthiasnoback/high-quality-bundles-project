@@ -6,7 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
+use Traditional\Bundle\UserBundle\Command\RegisterUser;
 use Traditional\Bundle\UserBundle\Entity\User;
 use Traditional\Bundle\UserBundle\Form\CreateUserType;
 
@@ -21,11 +23,7 @@ class UserController extends Controller
      */
     public function listAction()
     {
-        $users = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('Traditional\Bundle\UserBundle\Entity\User')
-            ->findAll();
+        $users = $this->get('user_repository')->dutchUsers();
 
         return array(
             'users' => $users
@@ -39,22 +37,16 @@ class UserController extends Controller
      */
     public function createAction(Request $request)
     {
-        $user = new User();
-
-        $form = $this->createForm(new CreateUserType(), $user);
+        $form = $this->createForm(new CreateUserType());
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
+            $command = $form->getData();
 
-            $message = \Swift_Message::newInstance('Welcome', 'Yes, welcome');
-            $message->setTo($user->getEmail());
-            $this->get('mailer')->send($message);
+            $this->get('command_bus')->handle($command);
 
-            return $this->redirect($this->generateUrl('user_list'));
+            return $this->redirect($this->generateUrl('user_list', ['id' => $command->id()]));
         }
 
         return array(
