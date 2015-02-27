@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Traditional\Bundle\UserBundle\Entity\User;
+use Traditional\Bundle\UserBundle\Event\UserRegisteredEvent;
 use Traditional\Bundle\UserBundle\Form\CreateUserType;
 
 /**
@@ -45,10 +46,14 @@ class UserController extends Controller
 
         $form->handleRequest($request);
 
+        $this->get('event_bus')->handle(new UserRegisteredEvent(uniqid()));
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
+
+            $this->get('event_bus')->handle(new UserRegisteredEvent($user->getId()));
 
             $message = \Swift_Message::newInstance('Welcome', 'Yes, welcome');
             $message->setTo($user->getEmail());
