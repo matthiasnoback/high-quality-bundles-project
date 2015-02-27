@@ -30,7 +30,8 @@
         "simple-bus/doctrine-orm-bridge": "~3.0",
         "simple-bus/symfony-bridge": "~3.0",
         "rhumsaa/uuid": "~2.7",
-        "jms/serializer-bundle": "0.13.*@dev"
+        "jms/serializer-bundle": "0.13.*@dev",
+        "oldsound/rabbitmq-bundle": "~1.5"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"

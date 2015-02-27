@@ -22,7 +22,9 @@ class AppKernel extends Kernel
             new SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusEventBusBundle(),
             new SimpleBus\SymfonyBridge\DoctrineOrmBridgeBundle(),
-            new Traditional\Bundle\UserBundle\TraditionalUserBundle()
+            new Traditional\Bundle\UserBundle\TraditionalUserBundle(),
+            new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
+            new \SimpleBus\Asynchronous\SymfonyBridge\AsynchronousEventsBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,15 @@
+services:
+    simple_bus.asynchronous.message_publisher:
+        alias: simple_bus.asynchronous.amqp_message_publisher
+
+    simple_bus.asynchronous.amqp_message_publisher:
+        class: SimpleBus\Asynchronous\Message\Publisher\Adapter\AMQPPublisher
+        arguments:
+            - @simple_bus.asynchronous.message_serializer
+            - @simple_bus.asynchronous.amqp_message_producer
+
+    simple_bus.asynchronous.amqp_message_consumer:
+        class: SimpleBus\Asynchronous\Message\Consumer\Adapter\AMQPMessageConsumer
+        arguments:
+            - @simple_bus.asynchronous.message_serializer
+            - @event_bus

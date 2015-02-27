@@ -71,3 +71,30 @@ command_bus:
 
 event_bus:
     event_name_resolver_strategy: named_message
+
+asynchronous_events:
+    rabbit_mq:
+        enabled: true
+        producer_service_id: old_sound_rabbit_mq.asynchronous_events_producer
+    jms_serializer:
+        enabled: true
+
+old_sound_rabbit_mq:
+    connections:
+        default:
+            host:     'localhost'
+            port:     5672
+            user:     'guest'
+            password: 'guest'
+            vhost:    '/'
+            lazy:     true
+    producers:
+        asynchronous_events:
+            connection:       default
+            exchange_options: { name: 'asynchronous_events', type: direct }
+    consumers:
+        asynchronous_events:
+            connection:       default
+            exchange_options: { name: 'asynchronous_events', type: direct }
+            queue_options:    { name: 'asynchronous_events' }
+            callback:         simple_bus.asynchronous.amqp_message_consumer

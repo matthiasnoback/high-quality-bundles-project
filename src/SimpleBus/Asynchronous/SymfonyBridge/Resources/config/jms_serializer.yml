@@ -1,0 +1,11 @@
+services:
+    simple_bus.asynchronous.message_serializer:
+        alias: simple_bus.asynchronous.jms_serializer.message_serializer
+
+    simple_bus.asynchronous.jms_serializer.message_serializer:
+        class: SimpleBus\Asynchronous\Message\Serializer\Adapter\JMSSerializerMessageSerializer
+        public: false
+        arguments:
+            - @simple_bus.asynchronous.message_envelope_factory
+            - @jms_serializer
+            - "json"
