@@ -4,6 +4,7 @@ namespace Traditional\Bundle\UserBundle\Event;
 
 use SimpleBus\Message\Message;
 use SimpleBus\Message\Subscriber\MessageSubscriber;
+use Traditional\Bundle\UserBundle\Entity\UserRepository;
 
 class WhenUserWasRegisteredSendWelcomeMail implements MessageSubscriber
 {
@@ -12,9 +13,15 @@ class WhenUserWasRegisteredSendWelcomeMail implements MessageSubscriber
      */
     private $mailer;
 
-    public function __construct(\Swift_Mailer $mailer)
+    /**
+     * @var UserRepository
+     */
+    private $userRepository;
+
+    public function __construct(\Swift_Mailer $mailer, UserRepository $userRepository)
     {
         $this->mailer = $mailer;
+        $this->userRepository = $userRepository;
     }
 
     /**
@@ -22,8 +29,10 @@ class WhenUserWasRegisteredSendWelcomeMail implements MessageSubscriber
      */
     public function notify(Message $message)
     {
+        $user = $this->userRepository->byId($message->userId());
+
         $emailMessage = \Swift_Message::newInstance('Welcome', 'Yes, welcome');
-        $emailMessage->setTo((string) $message->user()->getEmail());
+        $emailMessage->setTo((string) $user->getEmail());
         $this->mailer->send($emailMessage);
     }
 }

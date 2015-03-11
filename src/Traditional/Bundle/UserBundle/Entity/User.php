@@ -51,7 +51,7 @@ class User implements ContainsRecordedMessages
     {
         $user = new self($id, $email, $password, $country);
 
-        $user->record(new UserWasRegistered($user));
+        $user->record(new UserWasRegistered($id));
 
         return $user;
     }

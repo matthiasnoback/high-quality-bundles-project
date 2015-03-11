@@ -15,5 +15,26 @@ services:
         class: Traditional\Bundle\UserBundle\Event\WhenUserWasRegisteredSendWelcomeMail
         arguments:
             - @mailer
+            - @user_repository
         tags:
-            - { name: event_subscriber, subscribes_to: user_was_registered }
+            - { name: asynchronous_event_subscriber, subscribes_to: user_was_registered }
+
+    synchronous_logging_middleware:
+        class: SimpleBus\Message\Logging\LoggingMiddleware
+        arguments:
+            - @logger
+            - 'debug'
+        tags:
+            - { name: monolog.logger, channel: synchronous }
+            - { name: command_bus_middleware, priority: -999 }
+            - { name: event_bus_middleware, priority: -999 }
+
+    asynchronous_logging_middleware:
+        class: SimpleBus\Message\Logging\LoggingMiddleware
+        arguments:
+            - @logger
+            - 'debug'
+        tags:
+            - { name: monolog.logger, channel: asynchronous }
+            - { name: asynchronous_command_bus_middleware, priority: -999 }
+            - { name: asynchronous_event_bus_middleware, priority: -999 }

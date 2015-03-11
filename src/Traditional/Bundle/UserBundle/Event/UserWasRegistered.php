@@ -3,23 +3,24 @@
 namespace Traditional\Bundle\UserBundle\Event;
 
 use SimpleBus\Message\Name\NamedMessage;
-use Traditional\Bundle\UserBundle\Entity\User;
+use JMS\Serializer\Annotation as Serializer;
 
 class UserWasRegistered implements NamedMessage
 {
     /**
-     * @var User
+     * @var string
+     * @Serializer\Type("string")
      */
-    private $user;
+    private $userId;
 
-    public function __construct(User $user)
+    public function __construct($userId)
     {
-        $this->user = $user;
+        $this->userId = $userId;
     }
 
-    public function user()
+    public function userId()
     {
-        return $this->user;
+        return $this->userId;
     }
 
     public static function messageName()
