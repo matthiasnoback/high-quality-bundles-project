@@ -3135,12 +3135,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/RabbitMQBundle.git",
-                "reference": "b9234246bd0a49ad6ff8672be3101b662d24e0f5"
+                "reference": "c7a82140f918de4d3bad01048a682d29c819bb83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundle/zipball/b9234246bd0a49ad6ff8672be3101b662d24e0f5",
-                "reference": "b9234246bd0a49ad6ff8672be3101b662d24e0f5",
+                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundle/zipball/c7a82140f918de4d3bad01048a682d29c819bb83",
+                "reference": "c7a82140f918de4d3bad01048a682d29c819bb83",
                 "shasum": ""
             },
             "require": {
@@ -3149,7 +3149,8 @@
                 "php": ">=5.4",
                 "simple-bus/asynchronous": "dev-master",
                 "simple-bus/asynchronous-bundle": "dev-master",
-                "simple-bus/message-bus": "~1.0"
+                "simple-bus/message-bus": "~1.0",
+                "symfony/monolog-bundle": "~2.3"
             },
             "require-dev": {
                 "matthiasnoback/phpunit-asynchronicity": "dev-master",
@@ -3185,7 +3186,7 @@
                 "messages",
                 "rabbitmq"
             ],
-            "time": "2015-03-10 09:43:32"
+            "time": "2015-03-11 14:06:04"
         },
         {
             "name": "simple-bus/serialization",
@@ -3237,21 +3238,21 @@
         },
         {
             "name": "simple-bus/symfony-bridge",
-            "version": "v3.1.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/SymfonyBridge.git",
-                "reference": "098db9d6e256b72a5678258d05af8f5d98e583e1"
+                "reference": "e63b264ec4de5b0e67de5118b1d40755c80b22b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/SymfonyBridge/zipball/098db9d6e256b72a5678258d05af8f5d98e583e1",
-                "reference": "098db9d6e256b72a5678258d05af8f5d98e583e1",
+                "url": "https://api.github.com/repos/SimpleBus/SymfonyBridge/zipball/e63b264ec4de5b0e67de5118b1d40755c80b22b9",
+                "reference": "e63b264ec4de5b0e67de5118b1d40755c80b22b9",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4",
-                "simple-bus/message-bus": "~1.0",
+                "simple-bus/message-bus": "^1.1.0",
                 "symfony/dependency-injection": "~2.3",
                 "symfony/http-kernel": "~2.3",
                 "symfony/yaml": "~2.3"
@@ -3260,12 +3261,14 @@
                 "doctrine/doctrine-bundle": "~1.0",
                 "doctrine/orm": "~2.3",
                 "phpunit/phpunit": "~4.0",
-                "simple-bus/doctrine-orm-bridge": "~3.0"
+                "simple-bus/doctrine-orm-bridge": "~3.0",
+                "symfony/monolog-bundle": "~2.3"
             },
             "suggest": {
                 "doctrine/doctrine-bundle": "For integration with Doctrine ORM",
                 "doctrine/orm": "For integration with Doctrine ORM",
-                "simple-bus/doctrine-orm-bridge": "For integration with Doctrine ORM"
+                "simple-bus/doctrine-orm-bridge": "For integration with Doctrine ORM",
+                "symfony/monolog-bundle": "For logging messages"
             },
             "type": "library",
             "autoload": {
@@ -3292,7 +3295,7 @@
                 "event bus",
                 "symfony"
             ],
-            "time": "2015-03-10 10:21:39"
+            "time": "2015-03-10 15:26:04"
         },
         {
             "name": "swiftmailer/swiftmailer",
