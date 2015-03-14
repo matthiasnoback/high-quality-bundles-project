@@ -26,7 +26,8 @@ class AppKernel extends Kernel
             new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
             new SimpleBus\JMSSerializerBundle\SimpleBusJMSSerializerBundle(),
             new SimpleBus\AsynchronousBundle\SimpleBusAsynchronousBundle(),
-            new SimpleBus\RabbitMQBundle\SimpleBusRabbitMQBundle()
+            new SimpleBus\RabbitMQBundle\SimpleBusRabbitMQBundle(),
+            new LongRunning\Bundle\LongRunningBundle\LongRunningBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

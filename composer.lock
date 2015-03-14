@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cc8c122ec761008481771e04407d81a0",
+    "hash": "b1e5f85df82356e6263053569e051662",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1304,6 +1304,49 @@
                 "minification"
             ],
             "time": "2014-12-12 05:04:05"
+        },
+        {
+            "name": "long-running/long-running",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LongRunning/LongRunning.git",
+                "reference": "4e6b041cca64091b4689c7ff00122785d6092484"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LongRunning/LongRunning/zipball/4e6b041cca64091b4689c7ff00122785d6092484",
+                "reference": "4e6b041cca64091b4689c7ff00122785d6092484",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "doctrine/orm": "~2.3",
+                "simple-bus/rabbitmq-bundle": "dev-master",
+                "symfony/framework-bundle": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LongRunning\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Noback",
+                    "email": "matthiasnoback@gmail.com",
+                    "homepage": "http://php-and-symfony.matthiasnoback.nl"
+                }
+            ],
+            "description": "Tools for working with long-running processes",
+            "homepage": "http://github.com/LongRunning/LongRunning",
+            "time": "2015-03-11 21:00:47"
         },
         {
             "name": "matthiasnoback/console-command-generator-bundle",
@@ -3821,7 +3864,8 @@
         "simple-bus/asynchronous-bundle": 20,
         "simple-bus/jms-serializer-bundle": 20,
         "simple-bus/rabbitmq-bundle": 20,
-        "jms/serializer-bundle": 20
+        "jms/serializer-bundle": 20,
+        "long-running/long-running": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
