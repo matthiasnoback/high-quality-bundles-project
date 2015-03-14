@@ -103,5 +103,7 @@ old_sound_rabbit_mq:
 simple_bus_rabbit_mq:
     commands:
         producer_service_id: old_sound_rabbit_mq.asynchronous_commands_producer
+        logging: ~
     events:
         producer_service_id: old_sound_rabbit_mq.asynchronous_events_producer
+        logging: ~
