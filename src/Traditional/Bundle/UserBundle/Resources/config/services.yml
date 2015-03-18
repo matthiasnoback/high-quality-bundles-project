@@ -28,3 +28,10 @@ services:
         class: Infrastructure\Web\UserController
         calls:
             - [setContainer, [@service_container]]
+
+    create_user_form_type:
+        class: Infrastructure\Web\CreateUserType
+        arguments:
+            - @user_repository
+        tags:
+            - { name: form.type, alias: create_user }

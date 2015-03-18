@@ -13,8 +13,8 @@ class User
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="string")
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $id;
 
@@ -33,8 +33,9 @@ class User
      */
     private $country;
 
-    public function __construct(Email $email, $password, $country)
+    public function __construct($id, Email $email, $password, $country)
     {
+        $this->id = $id;
         $this->setEmail($email);
         $this->setPassword($password);
         $this->setCountry($country);

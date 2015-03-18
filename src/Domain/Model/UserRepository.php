@@ -2,10 +2,10 @@
 
 namespace Domain\Model;
 
-use Domain\Model\User;
-
 interface UserRepository
 {
+    public function nextIdentity();
+
     public function add(User $user);
 
     /**

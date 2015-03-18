@@ -28,14 +28,15 @@ class UserController extends Controller
      */
     public function createAction(Request $request)
     {
-        $form = $this->createForm(new CreateUserType());
+        $form = $this->createForm('create_user');
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $this->get('command_bus')->handle($form->getData());
+            $command = $form->getData();
+            $this->get('command_bus')->handle($command);
 
-            return $this->redirect($this->generateUrl('user_list'));
+            return $this->redirect($this->generateUrl('user_list', ['id' => $command->id()]));
         }
 
         return array(

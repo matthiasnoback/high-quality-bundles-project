@@ -6,10 +6,16 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\EntityRepository;
 use Domain\Model\User;
 use Domain\Model\UserRepository;
+use Rhumsaa\Uuid\Uuid;
 
 class DoctrineUserRepository implements UserRepository
 {
     private $doctrine;
+
+    public function nextIdentity()
+    {
+        return Uuid::uuid4();
+    }
 
     public function __construct(ManagerRegistry $doctrine)
     {
