@@ -1,23 +1,30 @@
 services:
     register_user_handler:
-        class: Traditional\Bundle\UserBundle\Command\RegisterUserHandler
+        class: Domain\Command\RegisterUserHandler
         arguments:
-            - @doctrine
+            - @user_repository
             - @event_recorder
         tags:
             - { name: command_handler, handles: register_user }
 
     user_repository:
-        class: Doctrine\ORM\EntityRepository
-        factory_service: doctrine
-        factory_method: getRepository
+        class: Infrastructure\Persistence\Doctrine\DoctrineUserRepository
         arguments:
-            - Traditional\Bundle\UserBundle\Entity\User
+            - @doctrine
 
     when_user_was_registered_send_welcome_email_event_subscriber:
-        class: Traditional\Bundle\UserBundle\Event\WhenUserWasRegisteredSendWelcomeEmail
+        class: Domain\Event\WhenUserWasRegisteredSendWelcomeEmail
         arguments:
-            - @user_repository
             - @mailer
         tags:
             - { name: event_subscriber, subscribes_to: user_was_registered }
+
+    register_user_console_command:
+        class: Infrastructure\Cli\RegisterUserConsoleCommand
+        tags:
+            - { name: console.command }
+
+    user_controller:
+        class: Infrastructure\Web\UserController
+        calls:
+            - [setContainer, [@service_container]]

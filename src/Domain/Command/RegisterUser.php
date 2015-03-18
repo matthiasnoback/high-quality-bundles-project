@@ -1,6 +1,6 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\Command;
+namespace Domain\Command;
 
 use SimpleBus\Message\Name\NamedMessage;
 use Symfony\Component\Validator\Constraints as Assert;

@@ -1,32 +1,22 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\Controller;
+namespace Infrastructure\Web;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
-use Traditional\Bundle\UserBundle\Command\RegisterUser;
-use Traditional\Bundle\UserBundle\Entity\User;
-use Traditional\Bundle\UserBundle\Form\CreateUserType;
+use Infrastructure\Web\CreateUserType;
 
-/**
- * @Route("/")
- */
 class UserController extends Controller
 {
     /**
-     * @Route("/", name="user_list")
-     * @Template
+     * @Template("@UserViews/list.html.twig")
      */
     public function listAction()
     {
         $users = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('Traditional\Bundle\UserBundle\Entity\User')
-            ->findAll();
+            ->get('user_repository')
+            ->all();
 
         return array(
             'users' => $users
@@ -34,9 +24,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/create-user", name="user_create")
-     * @Method({"GET", "POST"})
-     * @Template
+     * @Template("@UserViews/create.html.twig")
      */
     public function createAction(Request $request)
     {

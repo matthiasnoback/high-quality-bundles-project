@@ -1,9 +1,9 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\Event;
+namespace Domain\Event;
 
 use SimpleBus\Message\Name\NamedMessage;
-use Traditional\Bundle\UserBundle\Entity\User;
+use Domain\Model\User;
 
 class UserWasRegistered implements NamedMessage
 {

@@ -1,33 +1,33 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\Command;
+namespace Domain\Command;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Domain\Command\RegisterUser;
 use SimpleBus\Message\Handler\MessageHandler;
 use SimpleBus\Message\Message;
 use SimpleBus\Message\Recorder\RecordsMessages;
-use Traditional\Bundle\UserBundle\Entity\Email;
-use Traditional\Bundle\UserBundle\Entity\User;
-use Traditional\Bundle\UserBundle\Event\UserWasRegistered;
+use Domain\Model\Email;
+use Domain\Model\User;
+use Domain\Model\UserRepository;
+use Domain\Event\UserWasRegistered;
 
 class RegisterUserHandler implements MessageHandler
 {
     /**
-     * @var ManagerRegistry
-     */
-    private $doctrine;
-
-    /**
      * @var RecordsMessages
      */
     private $eventRecorder;
+    /**
+     * @var UserRepository
+     */
+    private $userRepository;
 
     public function __construct(
-        ManagerRegistry $doctrine,
+        UserRepository $userRepository,
         RecordsMessages $eventRecorder
     ) {
-        $this->doctrine = $doctrine;
         $this->eventRecorder = $eventRecorder;
+        $this->userRepository = $userRepository;
     }
 
     public function handle(Message $message)
@@ -41,8 +41,8 @@ class RegisterUserHandler implements MessageHandler
             $message->password,
             $message->country
         );
-        $em = $this->doctrine->getManager();
-        $em->persist($user);
+
+        $this->userRepository->add($user);
 
         $event = new UserWasRegistered($user);
         $this->eventRecorder->record($event);

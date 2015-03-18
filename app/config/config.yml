@@ -32,6 +32,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    paths:
+        "%kernel.root_dir%/../src/Infrastructure/Web/Views": "UserViews"
 
 # Assetic Configuration
 assetic:
@@ -62,6 +64,13 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        mappings:
+            domain:
+                mapping: true
+                type: annotation
+                dir: %kernel.root_dir%/../src/Domain/Model
+                prefix: Domain\Model
+                is_bundle: false
 
 swiftmailer:
     disable_delivery: true

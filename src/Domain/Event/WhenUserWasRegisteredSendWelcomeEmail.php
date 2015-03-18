@@ -1,28 +1,20 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\Event;
+namespace Domain\Event;
 
-use Doctrine\ORM\EntityRepository;
 use SimpleBus\Message\Message;
 use SimpleBus\Message\Subscriber\MessageSubscriber;
 
 class WhenUserWasRegisteredSendWelcomeEmail implements MessageSubscriber
 {
     /**
-     * @var EntityRepository
-     */
-    private $userRepository;
-
-    /**
      * @var \Swift_Mailer
      */
     private $mailer;
 
     public function __construct(
-        EntityRepository $userRepository,
         \Swift_Mailer $mailer
     ) {
-        $this->userRepository = $userRepository;
         $this->mailer = $mailer;
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\Entity;
+namespace Domain\Model;
 
 class Email
 {

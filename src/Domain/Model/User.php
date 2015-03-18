@@ -1,8 +1,9 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\Entity;
+namespace Domain\Model;
 
 use Doctrine\ORM\Mapping as ORM;
+use Domain\Model\Email;
 
 /**
  * @ORM\Entity

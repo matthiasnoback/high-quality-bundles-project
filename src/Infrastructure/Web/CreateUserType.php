@@ -1,11 +1,11 @@
 <?php
 
-namespace Traditional\Bundle\UserBundle\Form;
+namespace Infrastructure\Web;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Traditional\Bundle\UserBundle\Command\RegisterUser;
+use Domain\Command\RegisterUser;
 
 class CreateUserType extends AbstractType
 {

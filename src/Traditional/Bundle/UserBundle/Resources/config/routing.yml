@@ -1,3 +1,9 @@
-TraditionalUserBundle_controllers:
-    resource: @TraditionalUserBundle/Controller
-    type: annotation
+user_list:
+    path: "/"
+    defaults:
+        _controller: user_controller:listAction
+
+user_create:
+    path: "/create-user"
+    defaults:
+        _controller: user_controller:createAction
