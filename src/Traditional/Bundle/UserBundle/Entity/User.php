@@ -32,24 +32,26 @@ class User
      */
     private $country;
 
+    public function __construct(Email $email, $password, $country)
+    {
+        $this->setEmail($email);
+        $this->setPassword($password);
+        $this->setCountry($country);
+    }
+
     public function getId()
     {
         return $this->id;
     }
 
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
     public function getEmail()
     {
-        return $this->email;
+        return Email::fromString($this->email);
     }
 
-    public function setEmail($email)
+    private function setEmail(Email $email)
     {
-        $this->email = $email;
+        $this->email = (string) $email;
     }
 
     public function getPassword()
@@ -57,7 +59,7 @@ class User
         return $this->password;
     }
 
-    public function setPassword($password)
+    private function setPassword($password)
     {
         $this->password = $password;
     }
@@ -67,7 +69,7 @@ class User
         return $this->country;
     }
 
-    public function setCountry($country)
+    private function setCountry($country)
     {
         $this->country = $country;
     }
