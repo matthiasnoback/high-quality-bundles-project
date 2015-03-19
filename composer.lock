@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cc8c122ec761008481771e04407d81a0",
+    "hash": "78a4a66b4447adfe15241d7e33e6308b",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -3038,17 +3038,17 @@
             "time": "2015-03-19 12:22:13"
         },
         {
-            "name": "simple-bus/jms-serializer-bundle",
+            "name": "simple-bus/jms-serializer-bundle-bridge",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SimpleBus/JMSSerializerBundle.git",
-                "reference": "2ed6d8030dda4c481005e1cd3ab410c56556436e"
+                "url": "https://github.com/SimpleBus/JMSSerializerBundleBridge.git",
+                "reference": "9979a2abb0306f272d0a29c3bb453824bb3c5c34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBundle/zipball/2ed6d8030dda4c481005e1cd3ab410c56556436e",
-                "reference": "2ed6d8030dda4c481005e1cd3ab410c56556436e",
+                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBundleBridge/zipball/9979a2abb0306f272d0a29c3bb453824bb3c5c34",
+                "reference": "9979a2abb0306f272d0a29c3bb453824bb3c5c34",
                 "shasum": ""
             },
             "require": {
@@ -3059,12 +3059,13 @@
                 "symfony/framework-bundle": "~2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "bundle",
             "autoload": {
                 "psr-4": {
-                    "SimpleBus\\JMSSerializerBundle\\": "src"
+                    "SimpleBus\\JMSSerializerBundleBridge\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3079,13 +3080,13 @@
                 }
             ],
             "description": "Symfony bundle for using JMSSerializer as message serializer for SimpleBus/Asynchronous",
-            "homepage": "http://github.com/SimpleBus/JMSSerializerBundle",
+            "homepage": "http://github.com/SimpleBus/JMSSerializerBundleBridge",
             "keywords": [
                 "asynchronous",
                 "message",
                 "serializer"
             ],
-            "time": "2015-03-16 11:50:50"
+            "time": "2015-03-19 12:22:37"
         },
         {
             "name": "simple-bus/message-bus",
@@ -3137,17 +3138,17 @@
             "time": "2015-02-27 20:19:39"
         },
         {
-            "name": "simple-bus/rabbitmq-bundle",
+            "name": "simple-bus/rabbitmq-bundle-bridge",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SimpleBus/RabbitMQBundle.git",
-                "reference": "71b65128065da7592ae843e32f918738e505ebee"
+                "url": "https://github.com/SimpleBus/RabbitMQBundleBridge.git",
+                "reference": "e3c49ca382a07d29ff8b6951ba81126c8b688ae2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundle/zipball/71b65128065da7592ae843e32f918738e505ebee",
-                "reference": "71b65128065da7592ae843e32f918738e505ebee",
+                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundleBridge/zipball/e3c49ca382a07d29ff8b6951ba81126c8b688ae2",
+                "reference": "e3c49ca382a07d29ff8b6951ba81126c8b688ae2",
                 "shasum": ""
             },
             "require": {
@@ -3162,7 +3163,8 @@
             "require-dev": {
                 "matthiasnoback/phpunit-asynchronicity": "dev-master",
                 "phpunit/phpunit": "~4.0",
-                "simple-bus/jms-serializer-bundle": "dev-master",
+                "satooshi/php-coveralls": "~0.6",
+                "simple-bus/jms-serializer-bundle-bridge": "dev-master",
                 "symfony/console": "~2.0",
                 "symfony/finder": "~2.0",
                 "symfony/process": "~2.0"
@@ -3170,7 +3172,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "SimpleBus\\RabbitMQBundle\\": "src"
+                    "SimpleBus\\RabbitMQBundleBridge\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3184,8 +3186,8 @@
                     "homepage": "http://php-and-symfony.matthiasnoback.nl"
                 }
             ],
-            "description": "Use RabbitMQ with SimpleBus/Asynchronous",
-            "homepage": "http://github.com/SimpleBus/RabbitMQBundle",
+            "description": "Use OldSoundRabbitMQBundle with SimpleBus/AsynchronousBundle",
+            "homepage": "http://github.com/SimpleBus/RabbitMQBundleBridge",
             "keywords": [
                 "command bus",
                 "event bus",
@@ -3193,7 +3195,7 @@
                 "messages",
                 "rabbitmq"
             ],
-            "time": "2015-03-19 09:46:31"
+            "time": "2015-03-19 13:56:34"
         },
         {
             "name": "simple-bus/serialization",
@@ -3829,8 +3831,8 @@
         "matthiasnoback/console-command-generator-bundle": 20,
         "matthiasnoback/symfony-console-form": 20,
         "simple-bus/asynchronous-bundle": 20,
-        "simple-bus/jms-serializer-bundle": 20,
-        "simple-bus/rabbitmq-bundle": 20,
+        "simple-bus/jms-serializer-bundle-bridge": 20,
+        "simple-bus/rabbitmq-bundle-bridge": 20,
         "jms/serializer-bundle": 20
     },
     "prefer-stable": true,
