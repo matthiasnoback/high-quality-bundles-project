@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "78a4a66b4447adfe15241d7e33e6308b",
+    "hash": "ae9abc624b9f1ae9f1f638d4f8ead243",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -2826,16 +2826,16 @@
         },
         {
             "name": "simple-bus/asynchronous",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/Asynchronous.git",
-                "reference": "21efa646f40bc266b4d2ed8244ad7ae4a70f9b7e"
+                "reference": "10f19bdb7c46b06f48393e07cd9b97da89143585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/Asynchronous/zipball/21efa646f40bc266b4d2ed8244ad7ae4a70f9b7e",
-                "reference": "21efa646f40bc266b4d2ed8244ad7ae4a70f9b7e",
+                "url": "https://api.github.com/repos/SimpleBus/Asynchronous/zipball/10f19bdb7c46b06f48393e07cd9b97da89143585",
+                "reference": "10f19bdb7c46b06f48393e07cd9b97da89143585",
                 "shasum": ""
             },
             "require": {
@@ -2843,7 +2843,7 @@
                 "php": ">=5.4",
                 "psr/log": "~1.0",
                 "simple-bus/message-bus": "~1.0",
-                "simple-bus/serialization": "dev-master"
+                "simple-bus/serialization": "~1.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
@@ -2874,26 +2874,26 @@
                 "event bus",
                 "messaging"
             ],
-            "time": "2015-03-19 11:54:27"
+            "time": "2015-03-19 15:31:48"
         },
         {
             "name": "simple-bus/asynchronous-bundle",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/AsynchronousBundle.git",
-                "reference": "40661b89633a1dd056dbed8a61283811995f83c8"
+                "reference": "927aa8fc460e66b94d32555f034056e1bd7a7e78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/AsynchronousBundle/zipball/40661b89633a1dd056dbed8a61283811995f83c8",
-                "reference": "40661b89633a1dd056dbed8a61283811995f83c8",
+                "url": "https://api.github.com/repos/SimpleBus/AsynchronousBundle/zipball/927aa8fc460e66b94d32555f034056e1bd7a7e78",
+                "reference": "927aa8fc460e66b94d32555f034056e1bd7a7e78",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "~2.0",
                 "php": ">=5.4",
-                "simple-bus/asynchronous": "dev-master",
+                "simple-bus/asynchronous": "~1.0",
                 "simple-bus/message-bus": "~1.0",
                 "simple-bus/symfony-bridge": "^3.2.1",
                 "symfony/framework-bundle": "~2.0"
@@ -2932,7 +2932,7 @@
                 "message",
                 "message bus"
             ],
-            "time": "2015-03-19 12:22:31"
+            "time": "2015-03-19 15:34:15"
         },
         {
             "name": "simple-bus/doctrine-orm-bridge",
@@ -2989,23 +2989,23 @@
         },
         {
             "name": "simple-bus/jms-serializer-bridge",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/JMSSerializerBridge.git",
-                "reference": "62d975f6a85f0cf0a289cdef6aac64ec57d071a3"
+                "reference": "32f7115f75c39bbd5cd87ed6697519789cae4db5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBridge/zipball/62d975f6a85f0cf0a289cdef6aac64ec57d071a3",
-                "reference": "62d975f6a85f0cf0a289cdef6aac64ec57d071a3",
+                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBridge/zipball/32f7115f75c39bbd5cd87ed6697519789cae4db5",
+                "reference": "32f7115f75c39bbd5cd87ed6697519789cae4db5",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer": "~0.12",
                 "php": ">=5.4",
                 "simple-bus/message-bus": "~1.0",
-                "simple-bus/serialization": "dev-master"
+                "simple-bus/serialization": "~1.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
@@ -3035,27 +3035,27 @@
                 "message",
                 "serialization"
             ],
-            "time": "2015-03-19 12:22:13"
+            "time": "2015-03-19 15:35:28"
         },
         {
             "name": "simple-bus/jms-serializer-bundle-bridge",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/JMSSerializerBundleBridge.git",
-                "reference": "9979a2abb0306f272d0a29c3bb453824bb3c5c34"
+                "reference": "0304901e4ec6a76f82b72a9e97305c5c46533b1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBundleBridge/zipball/9979a2abb0306f272d0a29c3bb453824bb3c5c34",
-                "reference": "9979a2abb0306f272d0a29c3bb453824bb3c5c34",
+                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBundleBridge/zipball/0304901e4ec6a76f82b72a9e97305c5c46533b1b",
+                "reference": "0304901e4ec6a76f82b72a9e97305c5c46533b1b",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer-bundle": "~0.11",
                 "php": ">=5.4",
-                "simple-bus/asynchronous-bundle": "dev-master",
-                "simple-bus/jms-serializer-bridge": "dev-master",
+                "simple-bus/asynchronous-bundle": "~1.0",
+                "simple-bus/jms-serializer-bridge": "~1.0",
                 "symfony/framework-bundle": "~2.0"
             },
             "require-dev": {
@@ -3086,7 +3086,7 @@
                 "message",
                 "serializer"
             ],
-            "time": "2015-03-19 12:22:37"
+            "time": "2015-03-19 15:36:05"
         },
         {
             "name": "simple-bus/message-bus",
@@ -3139,32 +3139,32 @@
         },
         {
             "name": "simple-bus/rabbitmq-bundle-bridge",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/RabbitMQBundleBridge.git",
-                "reference": "e3c49ca382a07d29ff8b6951ba81126c8b688ae2"
+                "reference": "788f3391636f93439da33b34e944f74777f1de61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundleBridge/zipball/e3c49ca382a07d29ff8b6951ba81126c8b688ae2",
-                "reference": "e3c49ca382a07d29ff8b6951ba81126c8b688ae2",
+                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundleBridge/zipball/788f3391636f93439da33b34e944f74777f1de61",
+                "reference": "788f3391636f93439da33b34e944f74777f1de61",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "~2.0",
                 "oldsound/rabbitmq-bundle": "~1.0",
                 "php": ">=5.4",
-                "simple-bus/asynchronous": "dev-master",
-                "simple-bus/asynchronous-bundle": "dev-master",
+                "simple-bus/asynchronous": "~1.0",
+                "simple-bus/asynchronous-bundle": "~1.0",
                 "simple-bus/message-bus": "~1.0",
                 "symfony/monolog-bundle": "~2.3"
             },
             "require-dev": {
-                "matthiasnoback/phpunit-asynchronicity": "dev-master",
+                "matthiasnoback/phpunit-asynchronicity": "~1.0",
                 "phpunit/phpunit": "~4.0",
                 "satooshi/php-coveralls": "~0.6",
-                "simple-bus/jms-serializer-bundle-bridge": "dev-master",
+                "simple-bus/jms-serializer-bundle-bridge": "~1.0",
                 "symfony/console": "~2.0",
                 "symfony/finder": "~2.0",
                 "symfony/process": "~2.0"
@@ -3195,11 +3195,11 @@
                 "messages",
                 "rabbitmq"
             ],
-            "time": "2015-03-19 13:56:34"
+            "time": "2015-03-19 15:41:20"
         },
         {
             "name": "simple-bus/serialization",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/Serialization.git",
@@ -3830,9 +3830,6 @@
         "doctrine/doctrine-bundle": 20,
         "matthiasnoback/console-command-generator-bundle": 20,
         "matthiasnoback/symfony-console-form": 20,
-        "simple-bus/asynchronous-bundle": 20,
-        "simple-bus/jms-serializer-bundle-bridge": 20,
-        "simple-bus/rabbitmq-bundle-bridge": 20,
         "jms/serializer-bundle": 20
     },
     "prefer-stable": true,

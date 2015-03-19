@@ -84,6 +84,7 @@ event_bus:
     logging: ~
 
 old_sound_rabbit_mq:
+    enable_collector: true
     connections:
         default:
             host:     'localhost'
@@ -91,7 +92,6 @@ old_sound_rabbit_mq:
             user:     'guest'
             password: 'guest'
             vhost:    '/'
-            lazy:     true
     producers:
         asynchronous_events:
             connection:       default
