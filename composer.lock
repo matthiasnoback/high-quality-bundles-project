@@ -267,12 +267,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "ade7702fb8a0c9c980b22168dd6eb5a55a5b4c2a"
+                "reference": "23cdbfae8d673d79bb06790a126c96f8b648a052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/ade7702fb8a0c9c980b22168dd6eb5a55a5b4c2a",
-                "reference": "ade7702fb8a0c9c980b22168dd6eb5a55a5b4c2a",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/23cdbfae8d673d79bb06790a126c96f8b648a052",
+                "reference": "23cdbfae8d673d79bb06790a126c96f8b648a052",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +332,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-03-02 16:47:59"
+            "time": "2015-03-15 09:03:43"
         },
         {
             "name": "doctrine/dbal",
@@ -743,16 +743,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.0-alpha2",
+            "version": "v2.5.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "8f62728f4f4a1df2560688e8aae4d5f86d5660b0"
+                "reference": "483d48cc54eb11c256b3c77380927d15edd57ba4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/8f62728f4f4a1df2560688e8aae4d5f86d5660b0",
-                "reference": "8f62728f4f4a1df2560688e8aae4d5f86d5660b0",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/483d48cc54eb11c256b3c77380927d15edd57ba4",
+                "reference": "483d48cc54eb11c256b3c77380927d15edd57ba4",
                 "shasum": ""
             },
             "require": {
@@ -816,7 +816,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-01-28 21:44:51"
+            "time": "2015-03-18 22:38:18"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2723,17 +2723,17 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.4",
+            "version": "v3.0.5",
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "b3bc3e67c8b6b68b18d727012183520d35ee762a"
+                "reference": "a72ce75a73d86c3593eceed5650b58fd3807a0cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/b3bc3e67c8b6b68b18d727012183520d35ee762a",
-                "reference": "b3bc3e67c8b6b68b18d727012183520d35ee762a",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/a72ce75a73d86c3593eceed5650b58fd3807a0cf",
+                "reference": "a72ce75a73d86c3593eceed5650b58fd3807a0cf",
                 "shasum": ""
             },
             "require": {
@@ -2774,21 +2774,21 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2014-12-02 09:52:52"
+            "time": "2015-02-05 07:39:23"
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.5.2",
+            "version": "v2.5.3",
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "4b09746520a826a7bf34a466ba31c7d8740fef7e"
+                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/4b09746520a826a7bf34a466ba31c7d8740fef7e",
-                "reference": "4b09746520a826a7bf34a466ba31c7d8740fef7e",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/e50108c2133ee5c9c484555faed50c17a61221d3",
+                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3",
                 "shasum": ""
             },
             "require": {
@@ -2822,7 +2822,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2015-02-11 07:21:23"
+            "time": "2015-03-17 06:36:52"
         },
         {
             "name": "simple-bus/asynchronous",
@@ -2830,12 +2830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/Asynchronous.git",
-                "reference": "67026c04a007eaf4dcef207cbb292f319e494ad1"
+                "reference": "21efa646f40bc266b4d2ed8244ad7ae4a70f9b7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/Asynchronous/zipball/67026c04a007eaf4dcef207cbb292f319e494ad1",
-                "reference": "67026c04a007eaf4dcef207cbb292f319e494ad1",
+                "url": "https://api.github.com/repos/SimpleBus/Asynchronous/zipball/21efa646f40bc266b4d2ed8244ad7ae4a70f9b7e",
+                "reference": "21efa646f40bc266b4d2ed8244ad7ae4a70f9b7e",
                 "shasum": ""
             },
             "require": {
@@ -2846,7 +2846,8 @@
                 "simple-bus/serialization": "dev-master"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "autoload": {
@@ -2873,7 +2874,7 @@
                 "event bus",
                 "messaging"
             ],
-            "time": "2015-03-09 13:32:19"
+            "time": "2015-03-19 11:54:27"
         },
         {
             "name": "simple-bus/asynchronous-bundle",
@@ -2881,12 +2882,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/AsynchronousBundle.git",
-                "reference": "97ff89b9c0b09d63c3cbfb0e7796ef9ea3f50b85"
+                "reference": "40661b89633a1dd056dbed8a61283811995f83c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/AsynchronousBundle/zipball/97ff89b9c0b09d63c3cbfb0e7796ef9ea3f50b85",
-                "reference": "97ff89b9c0b09d63c3cbfb0e7796ef9ea3f50b85",
+                "url": "https://api.github.com/repos/SimpleBus/AsynchronousBundle/zipball/40661b89633a1dd056dbed8a61283811995f83c8",
+                "reference": "40661b89633a1dd056dbed8a61283811995f83c8",
                 "shasum": ""
             },
             "require": {
@@ -2899,6 +2900,7 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6",
                 "symfony/monolog-bundle": "~2.3"
             },
             "suggest": {
@@ -2930,7 +2932,7 @@
                 "message",
                 "message bus"
             ],
-            "time": "2015-03-16 11:50:41"
+            "time": "2015-03-19 12:22:31"
         },
         {
             "name": "simple-bus/doctrine-orm-bridge",
@@ -2991,12 +2993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/JMSSerializerBridge.git",
-                "reference": "371225b18ef71ef219d51cb80d039d4ec2b1e0cd"
+                "reference": "62d975f6a85f0cf0a289cdef6aac64ec57d071a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBridge/zipball/371225b18ef71ef219d51cb80d039d4ec2b1e0cd",
-                "reference": "371225b18ef71ef219d51cb80d039d4ec2b1e0cd",
+                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBridge/zipball/62d975f6a85f0cf0a289cdef6aac64ec57d071a3",
+                "reference": "62d975f6a85f0cf0a289cdef6aac64ec57d071a3",
                 "shasum": ""
             },
             "require": {
@@ -3006,7 +3008,8 @@
                 "simple-bus/serialization": "dev-master"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "bundle",
             "autoload": {
@@ -3032,7 +3035,7 @@
                 "message",
                 "serialization"
             ],
-            "time": "2015-03-10 08:15:37"
+            "time": "2015-03-19 12:22:13"
         },
         {
             "name": "simple-bus/jms-serializer-bundle",
@@ -3040,12 +3043,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/JMSSerializerBundle.git",
-                "reference": "2b7b237eca99c912f18a0129c90b5e4ce1f432a5"
+                "reference": "2ed6d8030dda4c481005e1cd3ab410c56556436e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBundle/zipball/2b7b237eca99c912f18a0129c90b5e4ce1f432a5",
-                "reference": "2b7b237eca99c912f18a0129c90b5e4ce1f432a5",
+                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBundle/zipball/2ed6d8030dda4c481005e1cd3ab410c56556436e",
+                "reference": "2ed6d8030dda4c481005e1cd3ab410c56556436e",
                 "shasum": ""
             },
             "require": {
@@ -3082,7 +3085,7 @@
                 "message",
                 "serializer"
             ],
-            "time": "2015-03-10 08:22:25"
+            "time": "2015-03-16 11:50:50"
         },
         {
             "name": "simple-bus/message-bus",
@@ -3139,12 +3142,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/RabbitMQBundle.git",
-                "reference": "9a84aa4ef88bf669c84604bc5c30a367855bb363"
+                "reference": "71b65128065da7592ae843e32f918738e505ebee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundle/zipball/9a84aa4ef88bf669c84604bc5c30a367855bb363",
-                "reference": "9a84aa4ef88bf669c84604bc5c30a367855bb363",
+                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundle/zipball/71b65128065da7592ae843e32f918738e505ebee",
+                "reference": "71b65128065da7592ae843e32f918738e505ebee",
                 "shasum": ""
             },
             "require": {
@@ -3190,7 +3193,7 @@
                 "messages",
                 "rabbitmq"
             ],
-            "time": "2015-03-11 19:20:58"
+            "time": "2015-03-19 09:46:31"
         },
         {
             "name": "simple-bus/serialization",
@@ -3198,12 +3201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/Serialization.git",
-                "reference": "a86cf4a59d57deb5dd441aecc326b1c0480ee72e"
+                "reference": "f487beea825773cd9285a6823f1cb25735cfa8ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/Serialization/zipball/a86cf4a59d57deb5dd441aecc326b1c0480ee72e",
-                "reference": "a86cf4a59d57deb5dd441aecc326b1c0480ee72e",
+                "url": "https://api.github.com/repos/SimpleBus/Serialization/zipball/f487beea825773cd9285a6823f1cb25735cfa8ae",
+                "reference": "f487beea825773cd9285a6823f1cb25735cfa8ae",
                 "shasum": ""
             },
             "require": {
@@ -3212,7 +3215,8 @@
                 "simple-bus/message-bus": "~1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "autoload": {
@@ -3238,20 +3242,20 @@
                 "messages",
                 "serialization"
             ],
-            "time": "2015-03-10 08:11:41"
+            "time": "2015-03-19 12:22:18"
         },
         {
             "name": "simple-bus/symfony-bridge",
-            "version": "v3.2.1",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/SymfonyBridge.git",
-                "reference": "e63b264ec4de5b0e67de5118b1d40755c80b22b9"
+                "reference": "989b9f50db749471f4edfa1e00e3337373518d74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/SymfonyBridge/zipball/e63b264ec4de5b0e67de5118b1d40755c80b22b9",
-                "reference": "e63b264ec4de5b0e67de5118b1d40755c80b22b9",
+                "url": "https://api.github.com/repos/SimpleBus/SymfonyBridge/zipball/989b9f50db749471f4edfa1e00e3337373518d74",
+                "reference": "989b9f50db749471f4edfa1e00e3337373518d74",
                 "shasum": ""
             },
             "require": {
@@ -3265,6 +3269,7 @@
                 "doctrine/doctrine-bundle": "~1.0",
                 "doctrine/orm": "~2.3",
                 "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6",
                 "simple-bus/doctrine-orm-bridge": "~3.0",
                 "symfony/monolog-bundle": "~2.3"
             },
@@ -3299,7 +3304,7 @@
                 "event bus",
                 "symfony"
             ],
-            "time": "2015-03-10 15:26:04"
+            "time": "2015-03-19 15:10:16"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3536,16 +3541,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.6.4",
+            "version": "v2.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "23b647f1e4eeb24a457d3c47f5f5046377d5a3bf"
+                "reference": "80833da9d04b004fa59fd23102e6dfad80c98106"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/23b647f1e4eeb24a457d3c47f5f5046377d5a3bf",
-                "reference": "23b647f1e4eeb24a457d3c47f5f5046377d5a3bf",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/80833da9d04b004fa59fd23102e6dfad80c98106",
+                "reference": "80833da9d04b004fa59fd23102e6dfad80c98106",
                 "shasum": ""
             },
             "require": {
@@ -3609,7 +3614,8 @@
                 "ircmaxell/password-compat": "~1.0",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0",
-                "propel/propel1": "~1.6"
+                "propel/propel1": "~1.6",
+                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -3648,7 +3654,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-02-02 18:02:30"
+            "time": "2015-03-17 14:58:46"
         },
         {
             "name": "twig/extensions",

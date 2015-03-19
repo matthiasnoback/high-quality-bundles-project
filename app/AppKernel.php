@@ -14,6 +14,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Matthias\Bundle\ConsoleCommandGeneratorBundle\MatthiasConsoleCommandGeneratorBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
@@ -25,8 +26,7 @@ class AppKernel extends Kernel
             new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
             new SimpleBus\JMSSerializerBundle\SimpleBusJMSSerializerBundle(),
             new SimpleBus\AsynchronousBundle\SimpleBusAsynchronousBundle(),
-            new SimpleBus\RabbitMQBundle\SimpleBusRabbitMQBundle(),
-            new Symfony\Bundle\MonologBundle\MonologBundle()
+            new SimpleBus\RabbitMQBundle\SimpleBusRabbitMQBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
