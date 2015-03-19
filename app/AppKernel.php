@@ -11,7 +11,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
@@ -23,10 +22,11 @@ class AppKernel extends Kernel
             new SimpleBus\SymfonyBridge\SimpleBusEventBusBundle(),
             new SimpleBus\SymfonyBridge\DoctrineOrmBridgeBundle(),
             new Traditional\Bundle\UserBundle\TraditionalUserBundle(),
-//            new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
-//            new SimpleBus\JMSSerializerBundle\SimpleBusJMSSerializerBundle(),
-//            new SimpleBus\AsynchronousBundle\SimpleBusAsynchronousBundle(),
-//            new SimpleBus\RabbitMQBundle\SimpleBusRabbitMQBundle()
+            new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
+            new SimpleBus\JMSSerializerBundle\SimpleBusJMSSerializerBundle(),
+            new SimpleBus\AsynchronousBundle\SimpleBusAsynchronousBundle(),
+            new SimpleBus\RabbitMQBundle\SimpleBusRabbitMQBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -2,7 +2,6 @@
 
 namespace Domain\Command;
 
-use Domain\Command\RegisterUser;
 use SimpleBus\Message\Handler\MessageHandler;
 use SimpleBus\Message\Message;
 use SimpleBus\Message\Recorder\RecordsMessages;
@@ -45,7 +44,7 @@ class RegisterUserHandler implements MessageHandler
 
         $this->userRepository->add($user);
 
-        $event = new UserWasRegistered($user);
+        $event = new UserWasRegistered($user->getId());
         $this->eventRecorder->record($event);
     }
 }

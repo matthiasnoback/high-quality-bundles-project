@@ -2881,12 +2881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/AsynchronousBundle.git",
-                "reference": "740c9834ecb9ddc4aaec6d22620536b9e44d8f3e"
+                "reference": "97ff89b9c0b09d63c3cbfb0e7796ef9ea3f50b85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/AsynchronousBundle/zipball/740c9834ecb9ddc4aaec6d22620536b9e44d8f3e",
-                "reference": "740c9834ecb9ddc4aaec6d22620536b9e44d8f3e",
+                "url": "https://api.github.com/repos/SimpleBus/AsynchronousBundle/zipball/97ff89b9c0b09d63c3cbfb0e7796ef9ea3f50b85",
+                "reference": "97ff89b9c0b09d63c3cbfb0e7796ef9ea3f50b85",
                 "shasum": ""
             },
             "require": {
@@ -2930,7 +2930,7 @@
                 "message",
                 "message bus"
             ],
-            "time": "2015-03-11 15:54:45"
+            "time": "2015-03-16 11:50:41"
         },
         {
             "name": "simple-bus/doctrine-orm-bridge",

@@ -15,9 +15,10 @@ services:
     when_user_was_registered_send_welcome_email_event_subscriber:
         class: Domain\Event\WhenUserWasRegisteredSendWelcomeEmail
         arguments:
+            - @user_repository
             - @mailer
         tags:
-            - { name: event_subscriber, subscribes_to: user_was_registered }
+            - { name: asynchronous_event_subscriber, subscribes_to: user_was_registered }
 
     register_user_console_command:
         class: Infrastructure\Cli\RegisterUserConsoleCommand

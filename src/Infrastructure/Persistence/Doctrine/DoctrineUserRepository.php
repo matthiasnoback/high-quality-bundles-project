@@ -44,4 +44,19 @@ class DoctrineUserRepository implements UserRepository
     {
         return $this->doctrine->getRepository(User::class);
     }
+
+    /**
+     * @param $id
+     * @return User
+     * @throws \DomainException
+     */
+    public function byId($id)
+    {
+        $user = $this->userRepository()->find($id);
+        if ($user === null) {
+            throw new \DomainException();
+        }
+
+        return $user;
+    }
 }

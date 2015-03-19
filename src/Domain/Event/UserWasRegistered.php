@@ -3,20 +3,23 @@
 namespace Domain\Event;
 
 use SimpleBus\Message\Name\NamedMessage;
-use Domain\Model\User;
+use JMS\Serializer\Annotation as Serializer;
 
 class UserWasRegistered implements NamedMessage
 {
-    private $user;
+    /**
+     * @Serializer\Type("string")
+     */
+    private $userId;
 
-    public function __construct(User $user)
+    public function __construct($userId)
     {
-        $this->user = $user;
+        $this->userId = (string) $userId;
     }
 
-    public function user()
+    public function userId()
     {
-        return $this->user;
+        return $this->userId;
     }
 
     public static function messageName()
