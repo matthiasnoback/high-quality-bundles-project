@@ -6,6 +6,11 @@
 composer create-project matthiasnoback/high-quality-bundles-project [project-directory] dev-master
 ```
 
+> ### Project branches/versions
+>
+> Be sure to add the version requirement `dev-master` when installing this project (or checkout the `master`
+> branch if you clone it). During the workshop we will create a separate branch for the various changes that we make.
+
 2. When asked, supply the requested information concerning the MySQL database (make sure you run a MySQL server).
 
 3. Do whatever is needed to get your file permissions right (see also [Setting up Permissions](http://symfony.com/doc/current/book/installation.html)).
