@@ -1,4 +1,5 @@
 old_sound_rabbit_mq:
+    enable_collector: true
     connections:
         default:
             host:     'localhost'
@@ -6,7 +7,6 @@ old_sound_rabbit_mq:
             user:     'guest'
             password: 'guest'
             vhost:    '/'
-            lazy:     true
     producers:
         asynchronous_events:
             connection:       default
@@ -31,3 +31,9 @@ simple_bus_rabbit_mq:
         producer_service_id: old_sound_rabbit_mq.asynchronous_commands_producer
     events:
         producer_service_id: old_sound_rabbit_mq.asynchronous_events_producer
+
+simple_bus_asynchronous:
+    commands:
+        logging: ~
+    events:
+        logging: ~

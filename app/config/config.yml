@@ -65,9 +65,3 @@ doctrine:
 
 swiftmailer:
     disable_delivery: true
-
-command_bus:
-    command_name_resolver_strategy: named_message
-
-event_bus:
-    event_name_resolver_strategy: named_message
