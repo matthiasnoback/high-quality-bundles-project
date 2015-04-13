@@ -1,0 +1,3 @@
+services:
+    user_repository:
+        class: Traditional\User\Infrastructure\Persistence\InMemory\InMemoryUserRepository

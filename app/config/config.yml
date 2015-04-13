@@ -56,12 +56,19 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
-        #types:
-        #    type_name:
-        #        class: Fully\Qualified\Class\Name\Of\Type
+        types:
+            email:
+                class: Traditional\User\Infrastructure\Persistence\DoctrineORM\EmailColumnType
+                commented: false
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
 swiftmailer:
     disable_delivery: true
+
+command_bus:
+    logging: ~
+
+event_bus:
+    logging: ~

@@ -1,0 +1,24 @@
+services:
+    register_user_handler:
+        class: Traditional\User\Command\RegisterUserHandler
+        arguments:
+            - @user_repository
+        tags:
+            - { name: command_handler, handles: Traditional\User\Command\RegisterUser }
+
+    when_user_was_registered_send_welcome_mail:
+        class: Traditional\User\Application\Service\WhenUserWasRegisteredSendWelcomeMail
+        arguments:
+            - @mailer
+        tags:
+            - { name: event_subscriber, subscribes_to: Traditional\User\Domain\Event\UserRegistered }
+
+    user_repository:
+        class: Traditional\User\Infrastructure\Persistence\DoctrineORM\DoctrineORMUserRepository
+        arguments:
+            - @doctrine
+
+    register_user_console_command:
+        class: Traditional\User\Infrastructure\CLI\RegisterUserConsoleCommand
+        tags:
+            - { name: console.command }
