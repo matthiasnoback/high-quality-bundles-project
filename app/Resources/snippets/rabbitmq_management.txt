@@ -1,11 +1,11 @@
 Stop RabbitMQ:
 
-    rabbitmqctl stop
+rabbitmqctl stop
 
-Start RabbbitMQ:
+Start RabbitMQ:
 
-    rabbitmq-server  -detached
+rabbitmq-server  -detached
 
 RabbitMQ Management Web UI
 
-    http://localhost:15672/
+http://localhost:15672/
