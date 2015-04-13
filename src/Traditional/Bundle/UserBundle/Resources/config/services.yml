@@ -10,8 +10,9 @@ services:
         class: Traditional\User\Application\Service\WhenUserWasRegisteredSendWelcomeMail
         arguments:
             - @mailer
+            - @user_repository
         tags:
-            - { name: event_subscriber, subscribes_to: Traditional\User\Domain\Event\UserRegistered }
+            - { name: asynchronous_event_subscriber, subscribes_to: Traditional\User\Domain\Event\UserRegistered }
 
     user_repository:
         class: Traditional\User\Infrastructure\Persistence\DoctrineORM\DoctrineORMUserRepository

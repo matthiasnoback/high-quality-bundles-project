@@ -4,27 +4,22 @@ namespace Traditional\User\Domain\Event;
 
 use SimpleBus\Message\Message;
 use Traditional\User\Domain;
-use Traditional\User\Domain\Model\User;
+use JMS\Serializer\Annotation as Serializer;
 
 class UserRegistered implements Message
 {
     /**
-     * @var User
+     * @Serializer\Type("string")
      */
-    private $user;
+    private $userId;
 
-    public function __construct(Domain\Model\User $user)
+    public function __construct($userId)
     {
-        $this->user = $user;
+        $this->userId = $userId;
     }
 
-    public function user()
+    public function userId()
     {
-        return $this->user;
-    }
-
-    public function userEmail()
-    {
-        return $this->user->getEmail();
+        return $this->userId;
     }
 }
