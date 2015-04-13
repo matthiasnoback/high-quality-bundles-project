@@ -17,4 +17,11 @@ interface UserRepository
      * @return User[]
      */
     public function all();
+
+    /**
+     * @param $id
+     * @return User
+     * @throws \DomainException
+     */
+    public function byId($id);
 }

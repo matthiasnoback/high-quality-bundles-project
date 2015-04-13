@@ -25,6 +25,21 @@ class DoctrineORMUserRepository implements UserRepository
 
     public function all()
     {
-        return $this->doctrine->getManager()->getRepository(User::class)->findAll();
+        return $this->repository()->findAll();
+    }
+
+    public function byId($id)
+    {
+        $user = $this->repository()->find($id);
+        if ($user === null) {
+            throw new \DomainException('User not found');
+        }
+
+        return $user;
+    }
+
+    private function repository()
+    {
+        return $this->doctrine->getManager()->getRepository(User::class);
     }
 }

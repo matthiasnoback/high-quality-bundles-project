@@ -7,10 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 use SimpleBus\Message\Recorder\ContainsRecordedMessages;
 use SimpleBus\Message\Recorder\PrivateMessageRecorderCapabilities;
 use Symfony\Component\Intl\Intl;
+use Traditional\User\Domain\Event\UserRegistered;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="traditional_user")
+ * @Serializer\ExclusionPolicy("ALL")
  */
 class User implements ContainsRecordedMessages
 {
@@ -20,21 +23,26 @@ class User implements ContainsRecordedMessages
      * @ORM\Id
      * @ORM\Column(type="string", length=36)
      * @ORM\GeneratedValue(strategy="NONE")
+     * @Serializer\Expose
      */
     private $id;
 
     /**
      * @ORM\Column(type="email", length=255)
+     * @Serializer\Expose
+     * @Serializer\Type("string")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Serializer\Expose
      */
     private $password;
 
     /**
      * @ORM\Column(type="string")
+     * @Serializer\Expose
      */
     private $country;
 
