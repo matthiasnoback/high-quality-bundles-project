@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cc8c122ec761008481771e04407d81a0",
+    "hash": "bdcc3891946a72c31abe9cd6cbca9e69",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -57,16 +57,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.3",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4"
+                "reference": "b5202eb9e83f8db52e0e58867e0a46e63be8332e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/eeda578cbe24a170331a1cfdf78be723412df7a4",
-                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/b5202eb9e83f8db52e0e58867e0a46e63be8332e",
+                "reference": "b5202eb9e83f8db52e0e58867e0a46e63be8332e",
                 "shasum": ""
             },
             "require": {
@@ -121,20 +121,20 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-12-20 20:49:38"
+            "time": "2014-12-23 22:40:37"
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "2346085d2b027b233ae1d5de59b07440b9f288c8"
+                "reference": "c9eadeb743ac6199f7eec423cb9426bc518b7b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/2346085d2b027b233ae1d5de59b07440b9f288c8",
-                "reference": "2346085d2b027b233ae1d5de59b07440b9f288c8",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/c9eadeb743ac6199f7eec423cb9426bc518b7b03",
+                "reference": "c9eadeb743ac6199f7eec423cb9426bc518b7b03",
                 "shasum": ""
             },
             "require": {
@@ -145,13 +145,13 @@
             },
             "require-dev": {
                 "phpunit/phpunit": ">=3.7",
-                "predis/predis": "~0.8",
+                "predis/predis": "~1.0",
                 "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -191,24 +191,27 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-01-15 20:38:55"
+            "time": "2015-04-15 00:11:59"
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "b99c5c46c87126201899afe88ec490a25eedd6a2"
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/b99c5c46c87126201899afe88ec490a25eedd6a2",
-                "reference": "b99c5c46c87126201899afe88ec490a25eedd6a2",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "extra": {
@@ -227,17 +230,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -246,10 +238,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Collections Abstraction library",
@@ -259,20 +257,20 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2014-02-03 23:07:43"
+            "time": "2015-04-14 22:21:58"
         },
         {
             "name": "doctrine/common",
-            "version": "dev-master",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "ade7702fb8a0c9c980b22168dd6eb5a55a5b4c2a"
+                "reference": "cd8daf2501e10c63dced7b8b9b905844316ae9d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/ade7702fb8a0c9c980b22168dd6eb5a55a5b4c2a",
-                "reference": "ade7702fb8a0c9c980b22168dd6eb5a55a5b4c2a",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/cd8daf2501e10c63dced7b8b9b905844316ae9d3",
+                "reference": "cd8daf2501e10c63dced7b8b9b905844316ae9d3",
                 "shasum": ""
             },
             "require": {
@@ -289,7 +287,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "2.6.x-dev"
                 }
             },
             "autoload": {
@@ -332,7 +330,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-03-02 16:47:59"
+            "time": "2015-04-02 19:55:44"
         },
         {
             "name": "doctrine/dbal",
@@ -743,16 +741,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.0-alpha2",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "8f62728f4f4a1df2560688e8aae4d5f86d5660b0"
+                "reference": "aa80c7d2c55a372f5f9f825f5c66dbda53a6e3fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/8f62728f4f4a1df2560688e8aae4d5f86d5660b0",
-                "reference": "8f62728f4f4a1df2560688e8aae4d5f86d5660b0",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/aa80c7d2c55a372f5f9f825f5c66dbda53a6e3fe",
+                "reference": "aa80c7d2c55a372f5f9f825f5c66dbda53a6e3fe",
                 "shasum": ""
             },
             "require": {
@@ -780,7 +778,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "2.6.x-dev"
                 }
             },
             "autoload": {
@@ -816,7 +814,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-01-28 21:44:51"
+            "time": "2015-04-02 20:40:18"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1079,17 +1077,17 @@
         },
         {
             "name": "jms/serializer-bundle",
-            "version": "0.13.0",
+            "version": "0.12.0",
             "target-dir": "JMS/SerializerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-                "reference": "bb15db3e661168f4310fad48b86915ff1ca33795"
+                "reference": "5531198a73c4adee669a8a2d1452999349822771"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/bb15db3e661168f4310fad48b86915ff1ca33795",
-                "reference": "bb15db3e661168f4310fad48b86915ff1ca33795",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/5531198a73c4adee669a8a2d1452999349822771",
+                "reference": "5531198a73c4adee669a8a2d1452999349822771",
                 "shasum": ""
             },
             "require": {
@@ -1116,7 +1114,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.13-dev"
+                    "dev-master": "0.12-dev"
                 }
             },
             "autoload": {
@@ -1145,7 +1143,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2013-12-05 14:36:11"
+            "time": "2013-07-29 12:36:36"
         },
         {
             "name": "knplabs/gaufrette",
@@ -1772,21 +1770,22 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "9ca52329bcdd1500de24427542577ebf3fc2f1c9"
+                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/9ca52329bcdd1500de24427542577ebf3fc2f1c9",
-                "reference": "9ca52329bcdd1500de24427542577ebf3fc2f1c9",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
+                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "~1.0,>=1.0.2",
-                "phpdocumentor/reflection-docblock": "~2.0"
+                "doctrine/instantiator": "^1.0.2",
+                "phpdocumentor/reflection-docblock": "~2.0",
+                "sebastian/comparator": "~1.1"
             },
             "require-dev": {
                 "phpspec/phpspec": "~2.0"
@@ -1794,7 +1793,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -1818,7 +1817,7 @@
                 }
             ],
             "description": "Highly opinionated mocking framework for PHP 5.3+",
-            "homepage": "http://phpspec.org",
+            "homepage": "https://github.com/phpspec/prophecy",
             "keywords": [
                 "Double",
                 "Dummy",
@@ -1827,20 +1826,20 @@
                 "spy",
                 "stub"
             ],
-            "time": "2014-11-17 16:23:49"
+            "time": "2015-03-27 19:31:25"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.0.15",
+            "version": "2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67"
+                "reference": "934fd03eb6840508231a7f73eb8940cf32c3b66c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/34cc484af1ca149188d0d9e91412191e398e0b67",
-                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/934fd03eb6840508231a7f73eb8940cf32c3b66c",
+                "reference": "934fd03eb6840508231a7f73eb8940cf32c3b66c",
                 "shasum": ""
             },
             "require": {
@@ -1889,35 +1888,37 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-01-24 10:06:35"
+            "time": "2015-04-11 04:35:00"
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "1.3.4",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "acd690379117b042d1c8af1fafd61bde001bf6bb"
+                "reference": "a923bb15680d0089e2316f7a4af8f437046e96bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/acd690379117b042d1c8af1fafd61bde001bf6bb",
-                "reference": "acd690379117b042d1c8af1fafd61bde001bf6bb",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/a923bb15680d0089e2316f7a4af8f437046e96bb",
+                "reference": "a923bb15680d0089e2316f7a4af8f437046e96bb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
-                    "File/"
+                    "src/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
             "license": [
                 "BSD-3-Clause"
             ],
@@ -1934,7 +1935,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2013-10-10 15:34:57"
+            "time": "2015-04-02 05:19:05"
         },
         {
             "name": "phpunit/php-text-template",
@@ -2026,16 +2027,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "db32c18eba00b121c145575fcbcd4d4d24e6db74"
+                "reference": "eab81d02569310739373308137284e0158424330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/db32c18eba00b121c145575fcbcd4d4d24e6db74",
-                "reference": "db32c18eba00b121c145575fcbcd4d4d24e6db74",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/eab81d02569310739373308137284e0158424330",
+                "reference": "eab81d02569310739373308137284e0158424330",
                 "shasum": ""
             },
             "require": {
@@ -2071,20 +2072,20 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-01-17 09:51:32"
+            "time": "2015-04-08 04:46:07"
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.5.0",
+            "version": "4.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5b578d3865a9128b9c209b011fda6539ec06e7a5"
+                "reference": "163232991e652e6efed2f8470326fffa61e848e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5b578d3865a9128b9c209b011fda6539ec06e7a5",
-                "reference": "5b578d3865a9128b9c209b011fda6539ec06e7a5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/163232991e652e6efed2f8470326fffa61e848e2",
+                "reference": "163232991e652e6efed2f8470326fffa61e848e2",
                 "shasum": ""
             },
             "require": {
@@ -2094,19 +2095,19 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "php": ">=5.3.3",
-                "phpspec/prophecy": "~1.3.1",
-                "phpunit/php-code-coverage": "~2.0",
-                "phpunit/php-file-iterator": "~1.3.2",
+                "phpspec/prophecy": "~1.3,>=1.3.1",
+                "phpunit/php-code-coverage": "~2.0,>=2.0.11",
+                "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
-                "phpunit/php-timer": "~1.0.2",
+                "phpunit/php-timer": "~1.0",
                 "phpunit/phpunit-mock-objects": "~2.3",
                 "sebastian/comparator": "~1.1",
-                "sebastian/diff": "~1.1",
+                "sebastian/diff": "~1.2",
                 "sebastian/environment": "~1.2",
                 "sebastian/exporter": "~1.2",
                 "sebastian/global-state": "~1.0",
                 "sebastian/version": "~1.0",
-                "symfony/yaml": "~2.0"
+                "symfony/yaml": "~2.1|~3.0"
             },
             "suggest": {
                 "phpunit/php-invoker": "~1.1"
@@ -2117,7 +2118,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.5.x-dev"
+                    "dev-master": "4.6.x-dev"
                 }
             },
             "autoload": {
@@ -2143,29 +2144,29 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-02-05 15:51:19"
+            "time": "2015-04-11 05:23:21"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "c63d2367247365f688544f0d500af90a11a44c65"
+                "reference": "74ffb87f527f24616f72460e54b595f508dccb5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/c63d2367247365f688544f0d500af90a11a44c65",
-                "reference": "c63d2367247365f688544f0d500af90a11a44c65",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/74ffb87f527f24616f72460e54b595f508dccb5c",
+                "reference": "74ffb87f527f24616f72460e54b595f508dccb5c",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "~1.0,>=1.0.1",
+                "doctrine/instantiator": "~1.0,>=1.0.2",
                 "php": ">=5.3.3",
                 "phpunit/php-text-template": "~1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.3"
+                "phpunit/phpunit": "~4.4"
             },
             "suggest": {
                 "ext-soap": "*"
@@ -2198,7 +2199,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-10-03 05:12:11"
+            "time": "2015-04-02 05:36:41"
         },
         {
             "name": "psr/log",
@@ -2370,16 +2371,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "5843509fed39dee4b356a306401e9dd1a931fec7"
+                "reference": "863df9687835c62aa423a22412d26fa2ebde3fd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/5843509fed39dee4b356a306401e9dd1a931fec7",
-                "reference": "5843509fed39dee4b356a306401e9dd1a931fec7",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/863df9687835c62aa423a22412d26fa2ebde3fd3",
+                "reference": "863df9687835c62aa423a22412d26fa2ebde3fd3",
                 "shasum": ""
             },
             "require": {
@@ -2391,7 +2392,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -2418,32 +2419,32 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2014-08-15 10:29:00"
+            "time": "2015-02-22 15:13:53"
         },
         {
             "name": "sebastian/environment",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6e6c71d918088c251b181ba8b3088af4ac336dd7"
+                "reference": "5a8c7d31914337b69923db26c4221b81ff5a196e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6e6c71d918088c251b181ba8b3088af4ac336dd7",
-                "reference": "6e6c71d918088c251b181ba8b3088af4ac336dd7",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/5a8c7d31914337b69923db26c4221b81ff5a196e",
+                "reference": "5a8c7d31914337b69923db26c4221b81ff5a196e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.3"
+                "phpunit/phpunit": "~4.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -2468,7 +2469,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2014-10-25 08:00:45"
+            "time": "2015-01-01 10:01:08"
         },
         {
             "name": "sebastian/exporter",
@@ -2642,16 +2643,16 @@
         },
         {
             "name": "sebastian/version",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/version.git",
-                "reference": "a77d9123f8e809db3fbdea15038c27a95da4058b"
+                "reference": "ab931d46cd0d3204a91e1b9a40c4bc13032b58e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/a77d9123f8e809db3fbdea15038c27a95da4058b",
-                "reference": "a77d9123f8e809db3fbdea15038c27a95da4058b",
+                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/ab931d46cd0d3204a91e1b9a40c4bc13032b58e4",
+                "reference": "ab931d46cd0d3204a91e1b9a40c4bc13032b58e4",
                 "shasum": ""
             },
             "type": "library",
@@ -2673,21 +2674,21 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2014-12-15 14:25:24"
+            "time": "2015-02-24 06:35:25"
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v2.3.11",
+            "version": "v2.3.14",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "374bbea795fa69a85b1623048798a89aebffe62b"
+                "reference": "cb8195ddf5b310b34033921edec638829ccfa201"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/374bbea795fa69a85b1623048798a89aebffe62b",
-                "reference": "374bbea795fa69a85b1623048798a89aebffe62b",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/cb8195ddf5b310b34033921edec638829ccfa201",
+                "reference": "cb8195ddf5b310b34033921edec638829ccfa201",
                 "shasum": ""
             },
             "require": {
@@ -2719,21 +2720,21 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2015-02-27 12:58:18"
+            "time": "2015-04-10 06:19:33"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.4",
+            "version": "v3.0.7",
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "b3bc3e67c8b6b68b18d727012183520d35ee762a"
+                "reference": "5c37623576ea9e841b87dc0d85414d98fa6f7abb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/b3bc3e67c8b6b68b18d727012183520d35ee762a",
-                "reference": "b3bc3e67c8b6b68b18d727012183520d35ee762a",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/5c37623576ea9e841b87dc0d85414d98fa6f7abb",
+                "reference": "5c37623576ea9e841b87dc0d85414d98fa6f7abb",
                 "shasum": ""
             },
             "require": {
@@ -2774,21 +2775,21 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2014-12-02 09:52:52"
+            "time": "2015-04-02 12:28:58"
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.5.2",
+            "version": "v2.5.3",
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "4b09746520a826a7bf34a466ba31c7d8740fef7e"
+                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/4b09746520a826a7bf34a466ba31c7d8740fef7e",
-                "reference": "4b09746520a826a7bf34a466ba31c7d8740fef7e",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/e50108c2133ee5c9c484555faed50c17a61221d3",
+                "reference": "e50108c2133ee5c9c484555faed50c17a61221d3",
                 "shasum": ""
             },
             "require": {
@@ -2822,20 +2823,20 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2015-02-11 07:21:23"
+            "time": "2015-03-17 06:36:52"
         },
         {
             "name": "simple-bus/asynchronous",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/Asynchronous.git",
-                "reference": "67026c04a007eaf4dcef207cbb292f319e494ad1"
+                "reference": "10f19bdb7c46b06f48393e07cd9b97da89143585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/Asynchronous/zipball/67026c04a007eaf4dcef207cbb292f319e494ad1",
-                "reference": "67026c04a007eaf4dcef207cbb292f319e494ad1",
+                "url": "https://api.github.com/repos/SimpleBus/Asynchronous/zipball/10f19bdb7c46b06f48393e07cd9b97da89143585",
+                "reference": "10f19bdb7c46b06f48393e07cd9b97da89143585",
                 "shasum": ""
             },
             "require": {
@@ -2843,10 +2844,11 @@
                 "php": ">=5.4",
                 "psr/log": "~1.0",
                 "simple-bus/message-bus": "~1.0",
-                "simple-bus/serialization": "dev-master"
+                "simple-bus/serialization": "~1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "autoload": {
@@ -2873,32 +2875,33 @@
                 "event bus",
                 "messaging"
             ],
-            "time": "2015-03-09 13:32:19"
+            "time": "2015-03-19 15:31:48"
         },
         {
             "name": "simple-bus/asynchronous-bundle",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/AsynchronousBundle.git",
-                "reference": "740c9834ecb9ddc4aaec6d22620536b9e44d8f3e"
+                "reference": "927aa8fc460e66b94d32555f034056e1bd7a7e78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/AsynchronousBundle/zipball/740c9834ecb9ddc4aaec6d22620536b9e44d8f3e",
-                "reference": "740c9834ecb9ddc4aaec6d22620536b9e44d8f3e",
+                "url": "https://api.github.com/repos/SimpleBus/AsynchronousBundle/zipball/927aa8fc460e66b94d32555f034056e1bd7a7e78",
+                "reference": "927aa8fc460e66b94d32555f034056e1bd7a7e78",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "~2.0",
                 "php": ">=5.4",
-                "simple-bus/asynchronous": "dev-master",
+                "simple-bus/asynchronous": "~1.0",
                 "simple-bus/message-bus": "~1.0",
                 "simple-bus/symfony-bridge": "^3.2.1",
                 "symfony/framework-bundle": "~2.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6",
                 "symfony/monolog-bundle": "~2.3"
             },
             "suggest": {
@@ -2930,7 +2933,7 @@
                 "message",
                 "message bus"
             ],
-            "time": "2015-03-11 15:54:45"
+            "time": "2015-03-19 15:34:15"
         },
         {
             "name": "simple-bus/doctrine-orm-bridge",
@@ -2987,26 +2990,27 @@
         },
         {
             "name": "simple-bus/jms-serializer-bridge",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/JMSSerializerBridge.git",
-                "reference": "371225b18ef71ef219d51cb80d039d4ec2b1e0cd"
+                "reference": "32f7115f75c39bbd5cd87ed6697519789cae4db5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBridge/zipball/371225b18ef71ef219d51cb80d039d4ec2b1e0cd",
-                "reference": "371225b18ef71ef219d51cb80d039d4ec2b1e0cd",
+                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBridge/zipball/32f7115f75c39bbd5cd87ed6697519789cae4db5",
+                "reference": "32f7115f75c39bbd5cd87ed6697519789cae4db5",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer": "~0.12",
                 "php": ">=5.4",
                 "simple-bus/message-bus": "~1.0",
-                "simple-bus/serialization": "dev-master"
+                "simple-bus/serialization": "~1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "bundle",
             "autoload": {
@@ -3032,36 +3036,37 @@
                 "message",
                 "serialization"
             ],
-            "time": "2015-03-10 08:15:37"
+            "time": "2015-03-19 15:35:28"
         },
         {
-            "name": "simple-bus/jms-serializer-bundle",
-            "version": "dev-master",
+            "name": "simple-bus/jms-serializer-bundle-bridge",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SimpleBus/JMSSerializerBundle.git",
-                "reference": "2b7b237eca99c912f18a0129c90b5e4ce1f432a5"
+                "url": "https://github.com/SimpleBus/JMSSerializerBundleBridge.git",
+                "reference": "0304901e4ec6a76f82b72a9e97305c5c46533b1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBundle/zipball/2b7b237eca99c912f18a0129c90b5e4ce1f432a5",
-                "reference": "2b7b237eca99c912f18a0129c90b5e4ce1f432a5",
+                "url": "https://api.github.com/repos/SimpleBus/JMSSerializerBundleBridge/zipball/0304901e4ec6a76f82b72a9e97305c5c46533b1b",
+                "reference": "0304901e4ec6a76f82b72a9e97305c5c46533b1b",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer-bundle": "~0.11",
                 "php": ">=5.4",
-                "simple-bus/asynchronous-bundle": "dev-master",
-                "simple-bus/jms-serializer-bridge": "dev-master",
+                "simple-bus/asynchronous-bundle": "~1.0",
+                "simple-bus/jms-serializer-bridge": "~1.0",
                 "symfony/framework-bundle": "~2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "bundle",
             "autoload": {
                 "psr-4": {
-                    "SimpleBus\\JMSSerializerBundle\\": "src"
+                    "SimpleBus\\JMSSerializerBundleBridge\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3076,26 +3081,26 @@
                 }
             ],
             "description": "Symfony bundle for using JMSSerializer as message serializer for SimpleBus/Asynchronous",
-            "homepage": "http://github.com/SimpleBus/JMSSerializerBundle",
+            "homepage": "http://github.com/SimpleBus/JMSSerializerBundleBridge",
             "keywords": [
                 "asynchronous",
                 "message",
                 "serializer"
             ],
-            "time": "2015-03-10 08:22:25"
+            "time": "2015-03-19 15:36:05"
         },
         {
             "name": "simple-bus/message-bus",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/MessageBus.git",
-                "reference": "a7d0ef16b54f58537c4a5ca13073bef222dee321"
+                "reference": "123b11d95a7d9899ea0f87270dc616aee3453b50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/MessageBus/zipball/a7d0ef16b54f58537c4a5ca13073bef222dee321",
-                "reference": "a7d0ef16b54f58537c4a5ca13073bef222dee321",
+                "url": "https://api.github.com/repos/SimpleBus/MessageBus/zipball/123b11d95a7d9899ea0f87270dc616aee3453b50",
+                "reference": "123b11d95a7d9899ea0f87270dc616aee3453b50",
                 "shasum": ""
             },
             "require": {
@@ -3104,7 +3109,8 @@
                 "psr/log": "~1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "autoload": {
@@ -3131,35 +3137,36 @@
                 "message",
                 "message bus"
             ],
-            "time": "2015-02-27 20:19:39"
+            "time": "2015-04-13 15:55:26"
         },
         {
-            "name": "simple-bus/rabbitmq-bundle",
-            "version": "dev-master",
+            "name": "simple-bus/rabbitmq-bundle-bridge",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SimpleBus/RabbitMQBundle.git",
-                "reference": "9a84aa4ef88bf669c84604bc5c30a367855bb363"
+                "url": "https://github.com/SimpleBus/RabbitMQBundleBridge.git",
+                "reference": "788f3391636f93439da33b34e944f74777f1de61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundle/zipball/9a84aa4ef88bf669c84604bc5c30a367855bb363",
-                "reference": "9a84aa4ef88bf669c84604bc5c30a367855bb363",
+                "url": "https://api.github.com/repos/SimpleBus/RabbitMQBundleBridge/zipball/788f3391636f93439da33b34e944f74777f1de61",
+                "reference": "788f3391636f93439da33b34e944f74777f1de61",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "~2.0",
                 "oldsound/rabbitmq-bundle": "~1.0",
                 "php": ">=5.4",
-                "simple-bus/asynchronous": "dev-master",
-                "simple-bus/asynchronous-bundle": "dev-master",
+                "simple-bus/asynchronous": "~1.0",
+                "simple-bus/asynchronous-bundle": "~1.0",
                 "simple-bus/message-bus": "~1.0",
                 "symfony/monolog-bundle": "~2.3"
             },
             "require-dev": {
-                "matthiasnoback/phpunit-asynchronicity": "dev-master",
+                "matthiasnoback/phpunit-asynchronicity": "~1.0",
                 "phpunit/phpunit": "~4.0",
-                "simple-bus/jms-serializer-bundle": "dev-master",
+                "satooshi/php-coveralls": "~0.6",
+                "simple-bus/jms-serializer-bundle-bridge": "~1.0",
                 "symfony/console": "~2.0",
                 "symfony/finder": "~2.0",
                 "symfony/process": "~2.0"
@@ -3167,7 +3174,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "SimpleBus\\RabbitMQBundle\\": "src"
+                    "SimpleBus\\RabbitMQBundleBridge\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3181,8 +3188,8 @@
                     "homepage": "http://php-and-symfony.matthiasnoback.nl"
                 }
             ],
-            "description": "Use RabbitMQ with SimpleBus/Asynchronous",
-            "homepage": "http://github.com/SimpleBus/RabbitMQBundle",
+            "description": "Use OldSoundRabbitMQBundle with SimpleBus/AsynchronousBundle",
+            "homepage": "http://github.com/SimpleBus/RabbitMQBundleBridge",
             "keywords": [
                 "command bus",
                 "event bus",
@@ -3190,20 +3197,20 @@
                 "messages",
                 "rabbitmq"
             ],
-            "time": "2015-03-11 19:20:58"
+            "time": "2015-03-19 15:41:20"
         },
         {
             "name": "simple-bus/serialization",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/Serialization.git",
-                "reference": "a86cf4a59d57deb5dd441aecc326b1c0480ee72e"
+                "reference": "f487beea825773cd9285a6823f1cb25735cfa8ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/Serialization/zipball/a86cf4a59d57deb5dd441aecc326b1c0480ee72e",
-                "reference": "a86cf4a59d57deb5dd441aecc326b1c0480ee72e",
+                "url": "https://api.github.com/repos/SimpleBus/Serialization/zipball/f487beea825773cd9285a6823f1cb25735cfa8ae",
+                "reference": "f487beea825773cd9285a6823f1cb25735cfa8ae",
                 "shasum": ""
             },
             "require": {
@@ -3212,7 +3219,8 @@
                 "simple-bus/message-bus": "~1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "autoload": {
@@ -3238,20 +3246,20 @@
                 "messages",
                 "serialization"
             ],
-            "time": "2015-03-10 08:11:41"
+            "time": "2015-03-19 12:22:18"
         },
         {
             "name": "simple-bus/symfony-bridge",
-            "version": "v3.2.1",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/SymfonyBridge.git",
-                "reference": "e63b264ec4de5b0e67de5118b1d40755c80b22b9"
+                "reference": "989b9f50db749471f4edfa1e00e3337373518d74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleBus/SymfonyBridge/zipball/e63b264ec4de5b0e67de5118b1d40755c80b22b9",
-                "reference": "e63b264ec4de5b0e67de5118b1d40755c80b22b9",
+                "url": "https://api.github.com/repos/SimpleBus/SymfonyBridge/zipball/989b9f50db749471f4edfa1e00e3337373518d74",
+                "reference": "989b9f50db749471f4edfa1e00e3337373518d74",
                 "shasum": ""
             },
             "require": {
@@ -3265,6 +3273,7 @@
                 "doctrine/doctrine-bundle": "~1.0",
                 "doctrine/orm": "~2.3",
                 "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6",
                 "simple-bus/doctrine-orm-bridge": "~3.0",
                 "symfony/monolog-bundle": "~2.3"
             },
@@ -3299,7 +3308,7 @@
                 "event bus",
                 "symfony"
             ],
-            "time": "2015-03-10 15:26:04"
+            "time": "2015-03-19 15:10:16"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3536,16 +3545,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.6.4",
+            "version": "v2.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "23b647f1e4eeb24a457d3c47f5f5046377d5a3bf"
+                "reference": "48c9e835a877adfb023b8b6d033d9dd14f342b4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/23b647f1e4eeb24a457d3c47f5f5046377d5a3bf",
-                "reference": "23b647f1e4eeb24a457d3c47f5f5046377d5a3bf",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/48c9e835a877adfb023b8b6d033d9dd14f342b4b",
+                "reference": "48c9e835a877adfb023b8b6d033d9dd14f342b4b",
                 "shasum": ""
             },
             "require": {
@@ -3609,7 +3618,8 @@
                 "ircmaxell/password-compat": "~1.0",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0",
-                "propel/propel1": "~1.6"
+                "propel/propel1": "~1.6",
+                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -3648,7 +3658,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-02-02 18:02:30"
+            "time": "2015-04-01 16:55:26"
         },
         {
             "name": "twig/extensions",
@@ -3821,11 +3831,7 @@
         "doctrine/dbal": 20,
         "doctrine/doctrine-bundle": 20,
         "matthiasnoback/console-command-generator-bundle": 20,
-        "matthiasnoback/symfony-console-form": 20,
-        "simple-bus/asynchronous-bundle": 20,
-        "simple-bus/jms-serializer-bundle": 20,
-        "simple-bus/rabbitmq-bundle": 20,
-        "jms/serializer-bundle": 20
+        "matthiasnoback/symfony-console-form": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
