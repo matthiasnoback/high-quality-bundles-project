@@ -1,0 +1,27 @@
+services:
+    register_user_handler:
+        class: User\Command\RegisterUserHandler
+        arguments:
+            - @user_repository
+        tags:
+            - { name: command_handler, handles: User\Command\RegisterUser }
+
+    when_user_was_registered_send_welcome_email:
+        class: User\Event\WhenUserWasRegisteredSendWelcomeEmail
+        arguments:
+            - @user_repository
+            - @mailer
+        tags:
+            - { name: asynchronous_event_subscriber, subscribes_to: User\Event\UserWasRegistered }
+
+    register_user_console_command:
+        class: User\Cli\RegisterUserConsoleCommand
+        calls:
+            - [setContainer, [@service_container]]
+        tags:
+            - { name: console.command }
+
+    user_repository:
+        class: User\Persistence\DoctrineUserRepository
+        arguments:
+            - @doctrine

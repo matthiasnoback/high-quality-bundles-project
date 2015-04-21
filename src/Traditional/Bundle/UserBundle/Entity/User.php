@@ -3,17 +3,24 @@
 namespace Traditional\Bundle\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Rhumsaa\Uuid\Uuid;
+use SimpleBus\Message\Recorder\ContainsRecordedMessages;
+use SimpleBus\Message\Recorder\PrivateMessageRecorderCapabilities;
+use User\Domain\Model\Country;
+use User\Event\UserWasRegistered;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="traditional_user")
  */
-class User
+class User implements ContainsRecordedMessages
 {
+    use PrivateMessageRecorderCapabilities;
+
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="string")
+     * @ORM\GeneratedValue(strategy="NONE")
      */
     private $id;
 
@@ -32,14 +39,27 @@ class User
      */
     private $country;
 
-    public function getId()
+    private function __construct(Uuid $id, $email, $password, Country $country)
     {
-        return $this->id;
+        $this->id = (string) $id;
+        $this->setEmail($email);
+        $this->setPassword($password);
+        $this->country = (string) $country;
     }
 
-    public function setId($id)
+    public static function register(Uuid $id, $email, $password, Country $country)
     {
-        $this->id = $id;
+        $user = new self($id, $email, $password, $country);
+
+        $event = new UserWasRegistered((string) $id);
+        $user->record($event);
+
+        return $user;
+    }
+
+    public function getId()
+    {
+        return Uuid::fromString($this->id);
     }
 
     public function getEmail()
@@ -47,8 +67,10 @@ class User
         return $this->email;
     }
 
-    public function setEmail($email)
+    private function setEmail($email)
     {
+        \Assert\that($email)->email();
+
         $this->email = $email;
     }
 
@@ -57,18 +79,15 @@ class User
         return $this->password;
     }
 
-    public function setPassword($password)
+    private function setPassword($password)
     {
+        \Assert\that($password)->string()->minLength(8);
+
         $this->password = $password;
     }
 
     public function getCountry()
     {
-        return $this->country;
-    }
-
-    public function setCountry($country)
-    {
-        $this->country = $country;
+        return Country::fromCountryCode($this->country);
     }
 }
