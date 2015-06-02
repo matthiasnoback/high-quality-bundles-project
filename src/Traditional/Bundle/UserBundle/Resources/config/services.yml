@@ -1,0 +1,20 @@
+services:
+    user_repository:
+        class: Traditional\Infrastructure\DoctrineUserRepository
+        arguments:
+            - @doctrine
+
+    register_user_handler:
+        class: Traditional\Command\RegisterUserHandler
+        arguments:
+            - @user_repository
+        tags:
+            - { name: command_handler, handles: Traditional\Command\RegisterUser }
+
+    when_user_registered_send_welcome_email:
+        class: Traditional\Event\WhenUserRegisteredSendWelcomeEmail
+        arguments:
+            - @mailer
+            - @user_repository
+        tags:
+            - { name: asynchronous_event_subscriber, subscribes_to: Traditional\Event\UserRegistered }
