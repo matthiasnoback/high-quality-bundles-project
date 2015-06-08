@@ -11,7 +11,15 @@ class BirthDateType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date', 'datetime');
+        $builder
+            ->add(
+                'date',
+                'datetime',
+                [
+                    'label' => 'Date of birth (if you don\'t know, guess)',
+                    'years' => range(date('Y'), date('Y') - 120)
+                ]
+            );
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

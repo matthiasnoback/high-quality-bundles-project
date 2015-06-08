@@ -12,8 +12,8 @@ class FullNameType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName', 'text')
-            ->add('lastName', 'text');
+            ->add('firstName', 'text', ['label' => 'First name (if you don\'t know: John, Jane, ...)'])
+            ->add('lastName', 'text', ['label' => 'Last name (if you don\'t know: Doe, Roe, ...)']);
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

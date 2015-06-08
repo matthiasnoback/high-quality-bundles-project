@@ -33,6 +33,25 @@ class PatientController extends Controller
     }
 
     /**
+     * @Route("/find-by-last-name", name="patient_find_by_last_name")
+     * @Template("@DerpERBundle/Resources/views/Patient/list.html.twig")
+     */
+    public function findByLastName(Request $request)
+    {
+        $patients = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository(Patient::class)
+            ->findBy(
+                ['personalInformation.name.lastName' => $request->query->get('lastName')]
+            );
+
+        return array(
+            'patients' => $patients
+        );
+    }
+
+    /**
      * @Route("/create-patient", name="patient_create")
      * @Method({"GET", "POST"})
      * @Template()

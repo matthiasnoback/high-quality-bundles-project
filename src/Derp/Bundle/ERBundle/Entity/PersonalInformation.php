@@ -3,6 +3,7 @@
 namespace Derp\Bundle\ERBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Embeddable()
@@ -11,18 +12,21 @@ class PersonalInformation
 {
     /**
      * @ORM\Embedded(class="FullName", columnPrefix=false)
+     * @Assert\Valid()
      * @var FullName
      */
     private $name;
 
     /**
      * @ORM\Embedded(class="BirthDate", columnPrefix=false)
+     * @Assert\Valid()
      * @var BirthDate
      */
     private $dateOfBirth;
 
     /**
      * @ORM\Embedded(class="Sex", columnPrefix=false)
+     * @Assert\Valid()
      * @var Sex
      */
     private $sex;

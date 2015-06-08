@@ -4,15 +4,34 @@
     <h1>Patients</h1>
     <p><a href="{{ path('patient_create') }}">Create patient</a></p>
 
-    <table>
+    <form action="{{ path('patient_find_by_last_name') }}" method="get">
+        <label for="lastName">Find by last name: </label> <input type="text" id="lastName" name="lastName"/>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Indication</th>
+            <th>Has arrived?</th>
+        </tr>
+        </thead>
+        <tbody>
         {% for patient in patients %}
             <tr>
                 <td>{{ patient.id }}</td>
                 <td>{{ patient.personalInformation.name.firstName ~ ' ' ~ patient.personalInformation.name.lastName }}</td>
                 <td>{{ patient.personalInformation.sex.sex }}</td>
                 <td>{{ patient.indication }}</td>
-                <td>{{ patient.hasArrived }}</td>
+                <td>{{ patient.hasArrived ? 'yes' : 'no' }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>No matches</td>
             </tr>
         {% endfor %}
+        </tbody>
     </table>
 {% endblock %}

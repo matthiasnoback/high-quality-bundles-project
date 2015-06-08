@@ -11,7 +11,7 @@ class CreatePatientType extends AbstractType
     {
         $builder
             ->add('personalInformation', new PersonalInformationType())
-            ->add('indication', 'text', ['label' => 'Indication'])
+            ->add('indication', 'textarea', ['label' => 'Indication', 'attr' => ['rows' => 5, 'cols' => 20]])
             ->add('arrived', 'checkbox', ['label' => 'Arrived?'])
             ->add('submit', 'submit');
     }

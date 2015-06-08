@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="Derp\Bundle\ERBundle\Entity\PatientRepository")
  */
 class Patient
 {
@@ -19,6 +19,7 @@ class Patient
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $indication;
 
@@ -29,7 +30,7 @@ class Patient
 
     /**
      * @ORM\Embedded(class="PersonalInformation", columnPrefix=false)
-     * @Assert\Valid
+     * @Assert\Valid()
      */
     private $personalInformation;
 //
