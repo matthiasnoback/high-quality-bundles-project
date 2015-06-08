@@ -50,8 +50,9 @@ class PatientController extends Controller
             $em->persist($patient);
             $em->flush();
 
-            $message = \Swift_Message::newInstance('Welcome', 'I hope we can help you');
-            $message->setTo($patient->getEmail());
+            // TODO think of a relevant secondary task!
+            $message = \Swift_Message::newInstance('New patient', 'I hope we can help them');
+            $message->setTo('matthiasnoback@gmail.com');
             $this->get('mailer')->send($message);
 
             return $this->redirect($this->generateUrl('patient_list'));

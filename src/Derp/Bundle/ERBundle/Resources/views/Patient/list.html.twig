@@ -8,11 +8,11 @@
         {% for patient in patients %}
             <tr>
                 <td>{{ patient.id }}</td>
-                <td>{{ patient.email }}</td>
+                <td>{{ patient.personalInformation.name.firstName ~ ' ' ~ patient.personalInformation.name.lastName }}</td>
+                <td>{{ patient.personalInformation.sex.sex }}</td>
                 <td>{{ patient.indication }}</td>
-                <td>{{ patient.arrived }}</td>
+                <td>{{ patient.hasArrived }}</td>
             </tr>
         {% endfor %}
     </table>
-
 {% endblock %}

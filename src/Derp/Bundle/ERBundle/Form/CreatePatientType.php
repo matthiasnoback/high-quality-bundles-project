@@ -10,7 +10,7 @@ class CreatePatientType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', 'text', ['label' => 'Email address'])
+            ->add('personalInformation', new PersonalInformationType())
             ->add('indication', 'text', ['label' => 'Indication'])
             ->add('arrived', 'checkbox', ['label' => 'Arrived?'])
             ->add('submit', 'submit');
