@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/")
+ * @Route("/patients")
  */
 class PatientController extends Controller
 {
@@ -52,7 +52,7 @@ class PatientController extends Controller
     }
 
     /**
-     * @Route("/create-patient/", name="patient_create")
+     * @Route("/create/", name="patient_create")
      * @Method({"GET", "POST"})
      * @Template()
      */
@@ -69,10 +69,14 @@ class PatientController extends Controller
             $em->persist($patient);
             $em->flush();
 
-            // TODO think of a relevant secondary task!
-            $message = \Swift_Message::newInstance('New patient', 'I hope we can help them');
-            $message->setTo('matthiasnoback+head-nurse@gmail.com');
-            $this->get('mailer')->send($message);
+            if (!$patient->hasArrived()) {
+                $message = \Swift_Message::newInstance(
+                    'A new patient is about to arrive',
+                    'Indication: ' . $patient->getIndication()
+                );
+                $message->setTo('triage-nurse@derp.nl');
+                $this->get('mailer')->send($message);
+            }
 
             return $this->redirect($this->generateUrl('patient_details', ['id' => $patient->getId()]));
         }

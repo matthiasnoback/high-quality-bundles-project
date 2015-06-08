@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Pods</h1>
+    <p><a href="{{ path('pod_create') }}" class="btn btn-success">Create pod</a></p>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Beds</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pod in pods %}
+            <tr>
+                <td>{{ pod.name }}</td>
+                <td>
+                    {% for number, bed in pod.beds %}
+                        <a href="#">Bed {{ number }}</a>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>No matches</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

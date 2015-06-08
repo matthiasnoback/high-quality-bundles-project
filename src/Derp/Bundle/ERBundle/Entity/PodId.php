@@ -2,6 +2,6 @@
 
 namespace Derp\Bundle\ERBundle\Entity;
 
-class PatientId extends EntityId
+class PodId extends EntityId
 {
 }
