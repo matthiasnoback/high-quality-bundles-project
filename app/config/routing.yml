@@ -1,2 +1,5 @@
-TraditionalUserBundle:
-    resource: "@TraditionalUserBundle/Resources/config/routing.yml"
+#TraditionalUserBundle:
+#    resource: "@TraditionalUserBundle/Resources/config/routing.yml"
+
+DerpERBundle:
+    resource: "@DerpERBundle/Resources/config/routing.yml"

@@ -1,0 +1,3 @@
+DerpERBundle_controllers:
+    resource: @DerpERBundle/Controller
+    type: annotation

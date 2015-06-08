@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Patients</h1>
+    <p><a href="{{ path('patient_create') }}">Create patient</a></p>
+
+    <table>
+        {% for patient in patients %}
+            <tr>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.email }}</td>
+                <td>{{ patient.indication }}</td>
+                <td>{{ patient.arrived }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
