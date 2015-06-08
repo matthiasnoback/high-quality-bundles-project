@@ -14,7 +14,7 @@ class BirthDateType extends AbstractType
         $builder
             ->add(
                 'date',
-                'datetime',
+                'date',
                 [
                     'label' => 'Date of birth (if you don\'t know, guess)',
                     'years' => range(date('Y'), date('Y') - 120)

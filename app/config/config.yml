@@ -77,3 +77,9 @@ doctrine:
 
 swiftmailer:
     disable_delivery: true
+
+command_bus:
+    logging: ~
+
+event_bus:
+    logging: ~

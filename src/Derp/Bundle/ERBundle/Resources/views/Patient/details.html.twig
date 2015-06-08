@@ -9,7 +9,7 @@
         </tr>
         <tr>
             <th>Date of birth</th>
-            <td>{{ patient.personalInformation.dateOfBirth.date|date }}</td>
+            <td>{{ patient.personalInformation.dateOfBirth.date|date('d-m-Y') }}</td>
         </tr>
         <tr>
             <th>Has arrived yet?</th>

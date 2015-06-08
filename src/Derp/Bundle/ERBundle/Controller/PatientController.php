@@ -78,7 +78,7 @@ class PatientController extends Controller
                 $this->get('mailer')->send($message);
             }
 
-            return $this->redirect($this->generateUrl('patient_details', ['id' => $patient->getId()]));
+            return $this->redirect($this->generateUrl('patient_list'));
         }
 
         return array(
