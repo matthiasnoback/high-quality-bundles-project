@@ -33,7 +33,7 @@ class PatientController extends Controller
     }
 
     /**
-     * @Route("/find-by-last-name", name="patient_find_by_last_name")
+     * @Route("/find-by-last-name/", name="patient_find_by_last_name")
      * @Template("@DerpERBundle/Resources/views/Patient/list.html.twig")
      */
     public function findByLastName(Request $request)
@@ -52,7 +52,7 @@ class PatientController extends Controller
     }
 
     /**
-     * @Route("/create-patient", name="patient_create")
+     * @Route("/create-patient/", name="patient_create")
      * @Method({"GET", "POST"})
      * @Template()
      */
@@ -71,14 +71,36 @@ class PatientController extends Controller
 
             // TODO think of a relevant secondary task!
             $message = \Swift_Message::newInstance('New patient', 'I hope we can help them');
-            $message->setTo('matthiasnoback@gmail.com');
+            $message->setTo('matthiasnoback+head-nurse@gmail.com');
             $this->get('mailer')->send($message);
 
-            return $this->redirect($this->generateUrl('patient_list'));
+            return $this->redirect($this->generateUrl('patient_details', ['id' => $patient->getId()]));
         }
 
         return array(
             'form' => $form->createView()
+        );
+    }
+
+    /**
+     * @Route("/{id}/", name="patient_details")
+     * @Method("GET")
+     * @Template()
+     */
+    public function detailsAction($id)
+    {
+        $patient = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository(Patient::class)
+            ->find($id);
+
+        if ($patient === null) {
+            throw $this->createNotFoundException();
+        }
+
+        return array(
+            'patient' => $patient
         );
     }
 }

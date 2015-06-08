@@ -65,7 +65,7 @@ class Patient
 
     public function getId()
     {
-        return $this->id;
+        return PatientId::fromString($this->id);
     }
 
     public function getIndication()

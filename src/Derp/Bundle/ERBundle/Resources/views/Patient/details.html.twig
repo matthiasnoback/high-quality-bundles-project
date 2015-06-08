@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>{{ patient.personalInformation.name.firstName ~ ' ' ~ patient.personalInformation.name.lastName }}</h1>
+    <table class="table">
+        <tr>
+            <th>Sex</th>
+            <td>{{ patient.personalInformation.sex.sex }}</td>
+        </tr>
+        <tr>
+            <th>Date of birth</th>
+            <td>{{ patient.personalInformation.dateOfBirth.date|date }}</td>
+        </tr>
+        <tr>
+            <th>Has arrived yet?</th>
+            <td>{{ patient.hasArrived ? 'yes' : 'no' }}</td>
+        </tr>
+        <tr>
+            <th>Indication</th>
+            <td>{{ patient.indication }}</td>
+        </tr>
+    </table>
+{% endblock %}

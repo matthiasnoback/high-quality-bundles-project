@@ -5,11 +5,16 @@
     <title>{% block title %}Hexagonal architecture training{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}"/>
 </head>
 <body>
 <div class="container">
-{% block body %}{% endblock %}
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li><a href="{{ path('patient_list') }}">List all patients</a></li>
+        </ul>
+    </nav>
+    {% block body %}{% endblock %}
 </div>
 {% block javascripts %}{% endblock %}
 </body>
