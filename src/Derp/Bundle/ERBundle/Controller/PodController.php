@@ -3,7 +3,7 @@
 namespace Derp\Bundle\ERBundle\Controller;
 
 use Derp\Bundle\ERBundle\Entity\Pod;
-use Derp\Bundle\ERBundle\Form\CreatePatientType;
+use Derp\Bundle\ERBundle\Form\RegisterWalkInType;
 use Derp\Bundle\ERBundle\Entity\Patient;
 use Derp\Bundle\ERBundle\Form\CreatePodType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

@@ -3,7 +3,6 @@
 namespace Derp\Bundle\ERBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Embeddable()
@@ -18,19 +17,15 @@ class Sex
 
     /**
      * @ORM\Column(name="sex", type="string", length=10)
-     * @Assert\Choice(choices={"male", "female", "intersex"})
      */
     private $value;
 
-//    public function __construct($sex)
-//    {
-//        $this->setSex($sex);
-//    }
+    public function __construct($sex)
+    {
+        $this->setSex($sex);
+    }
 
-    /**
-     * compromise
-     */
-    public function setSex($sex)
+    private function setSex($sex)
     {
         if ($sex !== static::MALE && $sex !== static::FEMALE && $sex !== static::INTERSEX) {
             throw new \InvalidArgumentException('Invalid sex provided');

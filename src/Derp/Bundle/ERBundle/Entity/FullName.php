@@ -3,7 +3,6 @@
 namespace Derp\Bundle\ERBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Embeddable()
@@ -12,43 +11,25 @@ class FullName
 {
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
      */
     private $lastName;
-//
-//    private function __construct()
-//    {
-//    }
-//
-//    public static function fromParts($firstName, $lastName)
-//    {
-//        $patient = new static();
-//        $patient->firstName = $firstName;
-//        $patient->lastName = $lastName;
-//
-//        return $patient;
-//    }
 
-    /**
-     * compromise
-     */
-    public function setFirstName($firstName)
+    private function __construct()
     {
-        $this->firstName = $firstName;
     }
 
-    /**
-     * compromise
-     */
-    public function setLastName($lastName)
+    public static function fromParts($firstName, $lastName)
     {
-        $this->lastName = $lastName;
+        $patient = new static();
+        $patient->firstName = $firstName;
+        $patient->lastName = $lastName;
+
+        return $patient;
     }
 
     /**

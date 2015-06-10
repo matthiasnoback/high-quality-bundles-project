@@ -2,8 +2,13 @@
 
 namespace Derp\Bundle\ERBundle\Entity;
 
+use JMS\Serializer\Annotation as Serializer;
+
 abstract class EntityId
 {
+    /**
+     * @Serializer\Type("string")
+     */
     private $id;
 
     private function __construct()

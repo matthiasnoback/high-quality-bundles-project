@@ -1,0 +1,20 @@
+services:
+    register_walk_in_handler:
+        class: Derp\Command\RegisterWalkInHandler
+        arguments:
+            - @patient_repository
+        tags:
+            - { name: command_handler, handles: Derp\Command\RegisterWalkIn }
+
+    when_walk_in_registered_notify_triage_nurse:
+        class: Derp\Event\WhenWalkInRegisteredNotifyTriageNurse
+        arguments:
+            - @mailer
+            - @patient_repository
+        tags:
+            - { name: asynchronous_event_subscriber, subscribes_to: Derp\Event\WalkInRegistered }
+
+    patient_repository:
+        class: Derp\Infrastructure\DoctrineORMPatientRepository
+        arguments:
+            - @doctrine

@@ -5,7 +5,6 @@ namespace Derp\Bundle\ERBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 use DateInterval;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Embeddable()
@@ -18,17 +17,17 @@ class BirthDate
      */
     private $date;
 
-//    private function __construct(DateTime $date)
-//    {
-//        $this->date = $date;
-//    }
-//
-//    public static function fromYearMonthDayFormat($yearMonthDay)
-//    {
-//        return new BirthDate(
-//            DateTime::createFromFormat('Y-m-d H:i:s', $yearMonthDay .' 00:00:00')
-//        );
-//    }
+    private function __construct(DateTime $date)
+    {
+        $this->date = $date;
+    }
+
+    public static function fromYearMonthDayFormat($yearMonthDay)
+    {
+        return new BirthDate(
+            DateTime::createFromFormat('Y-m-d H:i:s', $yearMonthDay .' 00:00:00')
+        );
+    }
 //
 //    /**
 //     * @param integer $age
@@ -40,14 +39,6 @@ class BirthDate
 //            (new DateTime('now'))->sub(new \DateInterval("P{$age}Y"))
 //        );
 //    }
-
-    /**
-     * compromise
-     */
-    public function setDate(DateTime $date)
-    {
-        $this->date = $date;
-    }
 
     /**
      * compromise
