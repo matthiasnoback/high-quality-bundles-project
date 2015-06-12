@@ -6,6 +6,8 @@
 composer create-project matthiasnoback/high-quality-bundles-project [project-directory] dev-master
 ```
 
+N.B. When asked to keep the source control (Git) files, choose "Yes".
+
 > ### Project branches/versions
 >
 > Be sure to add the version requirement `dev-master` when installing this project (or checkout the `master`
