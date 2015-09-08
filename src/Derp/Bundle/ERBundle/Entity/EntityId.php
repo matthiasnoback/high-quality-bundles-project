@@ -12,10 +12,12 @@ abstract class EntityId
 
     public static function fromString($string)
     {
-        $patientId = new static();
-        $patientId->id = $string;
+        \Assert\that($string)->uuid();
 
-        return $patientId;
+        $entityId = new static();
+        $entityId->id = $string;
+
+        return $entityId;
     }
 
     public function __toString()

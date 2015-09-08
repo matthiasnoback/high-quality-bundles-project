@@ -22,10 +22,10 @@ class Sex
      */
     private $value;
 
-//    public function __construct($sex)
-//    {
-//        $this->setSex($sex);
-//    }
+    public function __construct($sex)
+    {
+        $this->setSex($sex);
+    }
 
     /**
      * compromise

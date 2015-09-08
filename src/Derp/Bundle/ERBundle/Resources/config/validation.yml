@@ -1,0 +1,4 @@
+Derp\Command\RegisterWalkIn:
+    properties:
+        indication:
+            - NotBlank: ~

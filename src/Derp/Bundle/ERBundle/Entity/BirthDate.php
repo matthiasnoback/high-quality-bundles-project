@@ -18,18 +18,18 @@ class BirthDate
      */
     private $date;
 
-//    private function __construct(DateTime $date)
-//    {
-//        $this->date = $date;
-//    }
-//
-//    public static function fromYearMonthDayFormat($yearMonthDay)
-//    {
-//        return new BirthDate(
-//            DateTime::createFromFormat('Y-m-d H:i:s', $yearMonthDay .' 00:00:00')
-//        );
-//    }
-//
+    private function __construct(DateTime $date)
+    {
+        $this->date = $date;
+    }
+
+    public static function fromYearMonthDayFormat($yearMonthDay)
+    {
+        return new BirthDate(
+            DateTime::createFromFormat('Y-m-d H:i:s', $yearMonthDay .' 00:00:00')
+        );
+    }
+
 //    /**
 //     * @param integer $age
 //     * @return DateTime

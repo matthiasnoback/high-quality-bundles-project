@@ -2,8 +2,19 @@
 
 namespace Derp\Bundle\ERBundle\Entity;
 
-use Doctrine\ORM\EntityRepository;
-
-class PatientRepository extends EntityRepository
+interface PatientRepository
 {
+    public function add(Patient $patient);
+
+    /**
+     * @return PatientId
+     */
+    public function nextIdentity();
+
+    /**
+     * @param PatientId $id
+     * @return Patient
+     * @throws PatientNotFound
+     */
+    public function getById(PatientId $id);
 }

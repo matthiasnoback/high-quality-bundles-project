@@ -2,24 +2,26 @@
 
 namespace Derp\Bundle\ERBundle\Entity;
 
+use Derp\Event\PatientHasWalkedIn;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use SimpleBus\Message\Recorder\ContainsRecordedMessages;
+use SimpleBus\Message\Recorder\PrivateMessageRecorderCapabilities;
 
 /**
- * @ORM\Entity(repositoryClass="Derp\Bundle\ERBundle\Entity\PatientRepository")
+ * @ORM\Entity()
  */
-class Patient
+class Patient implements ContainsRecordedMessages
 {
+    use PrivateMessageRecorderCapabilities;
+
     /**
      * @ORM\Id()
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue()
+     * @ORM\Column(type="string")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
      */
     private $indication;
 
@@ -30,22 +32,28 @@ class Patient
 
     /**
      * @ORM\Embedded(class="PersonalInformation", columnPrefix=false)
-     * @Assert\Valid()
      */
     private $personalInformation;
-//
-//    private function __construct(PersonalInformation $personalInformation, $indication, $arrived)
-//    {
-//        $this->indication = $indication;
-//        $this->arrived = $arrived;
-//        $this->personalInformation = $personalInformation;
-//    }
-//
-//    public static function walkIn(PersonalInformation $personalInformation, $indication)
-//    {
-//        return new Patient($personalInformation, $indication, true);
-//    }
-//
+
+    private function __construct(PatientId $id, PersonalInformation $personalInformation, $indication, $arrived)
+    {
+        \Assert\that($indication)->string('Indication should be a string')->notEmpty('Indication should not be empty');
+        $this->indication = $indication;
+        $this->arrived = $arrived;
+        $this->personalInformation = $personalInformation;
+        $this->id = $id;
+    }
+
+    public static function walkIn(PatientId $id, PersonalInformation $personalInformation, $indication)
+    {
+        $patient = new Patient($id, $personalInformation, $indication, true);
+
+        $event = new PatientHasWalkedIn($personalInformation, $indication);
+        $patient->record($event);
+
+        return $patient;
+    }
+
 //    public static function announce(PersonalInformation $personalInformation, $indication)
 //    {
 //        return new Patient($personalInformation, $indication, false);
@@ -81,29 +89,5 @@ class Patient
     public function getPersonalInformation()
     {
         return $this->personalInformation;
-    }
-
-    /**
-     * compromise
-     */
-    public function setIndication($indication)
-    {
-        $this->indication = $indication;
-    }
-
-    /**
-     * compromise
-     */
-    public function setArrived($arrived)
-    {
-        $this->arrived = $arrived;
-    }
-
-    /**
-     * compromise
-     */
-    public function setPersonalInformation(PersonalInformation $personalInformation)
-    {
-        $this->personalInformation = $personalInformation;
     }
 }

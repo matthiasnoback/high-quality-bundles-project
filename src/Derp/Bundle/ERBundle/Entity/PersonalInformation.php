@@ -30,30 +30,30 @@ class PersonalInformation
      * @var Sex
      */
     private $sex;
-//
-//    /**
-//     * @param FullName $name
-//     * @param BirthDate $dateOfBirth
-//     * @param Sex $sex
-//     */
-//    private function __construct(FullName $name, BirthDate $dateOfBirth, Sex $sex)
-//    {
-//        $this->name = $name;
-//        $this->dateOfBirth = $dateOfBirth;
-//        $this->sex = $sex;
-//    }
-//
-//    /**
-//     * @param FullName $name
-//     * @param BirthDate $date
-//     * @param Sex $sex
-//     * @return static
-//     */
-//    public static function fromDetails(FullName $name, BirthDate $date, Sex $sex)
-//    {
-//        return new static($name, $date, $sex);
-//    }
-//
+
+    /**
+     * @param FullName $name
+     * @param BirthDate $dateOfBirth
+     * @param Sex $sex
+     */
+    private function __construct(FullName $name, BirthDate $dateOfBirth, Sex $sex)
+    {
+        $this->name = $name;
+        $this->dateOfBirth = $dateOfBirth;
+        $this->sex = $sex;
+    }
+
+    /**
+     * @param FullName $name
+     * @param BirthDate $date
+     * @param Sex $sex
+     * @return static
+     */
+    public static function fromDetails(FullName $name, BirthDate $date, Sex $sex)
+    {
+        return new static($name, $date, $sex);
+    }
+
 //    /**
 //     * @param Sex $sex
 //     * @param int $estimatedAge

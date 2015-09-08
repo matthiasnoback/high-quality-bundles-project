@@ -1,0 +1,19 @@
+services:
+    register_walk_in_handler:
+        class: Derp\Command\RegisterWalkInHandler
+        arguments:
+            - @patient_repository
+        tags:
+            - { name: command_handler, handles: Derp\Command\RegisterWalkIn }
+
+    when_patient_has_walked_in_send_email:
+        class: Derp\Event\WhenPatientHasWalkedInSendEmail
+        arguments:
+            - @mailer
+        tags:
+            - { name: event_subscriber, subscribes_to: Derp\Event\PatientHasWalkedIn }
+
+    patient_repository:
+        class: Derp\Infrastructure\Persistence\DoctrineORM\DoctrineORMPatientRepository
+        arguments:
+            - @doctrine

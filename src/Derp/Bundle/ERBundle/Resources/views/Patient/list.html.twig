@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Patients</h1>
-    <p><a href="{{ path('patient_create') }}" class="btn btn-success">Create patient</a></p>
+    <p><a href="{{ path('register_walk_in') }}" class="btn btn-success">Register walk-in</a></p>
 
     <form action="{{ path('patient_find_by_last_name') }}" method="get" class="form-inline">
         <div class="form-group">
