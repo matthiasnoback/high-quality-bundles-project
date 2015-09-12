@@ -69,14 +69,12 @@ class PatientController extends Controller
             $em->persist($patient);
             $em->flush();
 
-            if (!$patient->hasArrived()) {
-                $message = \Swift_Message::newInstance(
-                    'A new patient is about to arrive',
-                    'Indication: ' . $patient->getIndication()
-                );
-                $message->setTo('triage-nurse@derp.nl');
-                $this->get('mailer')->send($message);
-            }
+            $message = \Swift_Message::newInstance(
+                'New patient',
+                'Indication: ' . $patient->getIndication()
+            );
+            $message->setTo('triage-nurse@derp.nl');
+            $this->get('mailer')->send($message);
 
             return $this->redirect($this->generateUrl('patient_list'));
         }
