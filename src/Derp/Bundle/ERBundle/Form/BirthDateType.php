@@ -17,7 +17,9 @@ class BirthDateType extends AbstractType
                 'date',
                 [
                     'label' => 'Date of birth (if you don\'t know, guess)',
-                    'years' => range(date('Y'), date('Y') - 120)
+                    'years' => range(date('Y'), date('Y') - 120),
+                    // Use this option to make the underlying format a string (instead of a DateTime object)
+                    //'input' => 'string'
                 ]
             );
     }
