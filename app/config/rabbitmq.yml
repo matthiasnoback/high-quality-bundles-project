@@ -4,8 +4,8 @@ old_sound_rabbit_mq:
         default:
             host:     'localhost'
             port:     5672
-            user:     'guest'
-            password: 'guest'
+            user:     'user'
+            password: 'password'
             vhost:    '/'
     producers:
         asynchronous_events:

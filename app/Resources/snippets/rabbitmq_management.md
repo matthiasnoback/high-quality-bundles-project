@@ -12,7 +12,7 @@
 
 # Start asynchronous events consumer:
 
-    # app/console rabbitmq:consumer asynchronous_events -w
+    app/console rabbitmq:consumer asynchronous_events -w
 
 # Start asynchronous commands consumer:
 

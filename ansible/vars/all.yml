@@ -21,6 +21,7 @@ rabbitmq:
     install: '1'
     user: user
     password: password
+    plugins: [rabbitmq_management]
 php:
     install: '1'
     ppa: php5-5.6
