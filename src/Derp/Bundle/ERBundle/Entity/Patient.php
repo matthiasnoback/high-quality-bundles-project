@@ -2,6 +2,7 @@
 
 namespace Derp\Bundle\ERBundle\Entity;
 
+use Assert\Assertion;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -33,11 +34,16 @@ class Patient
      * @Assert\Valid()
      */
     private $personalInformation;
-//
+
 //    private function __construct(PersonalInformation $personalInformation, $indication, $arrived)
 //    {
+//        Assertion::string($indication);
+//        Assertion::notEmpty($indication);
 //        $this->indication = $indication;
+//
+//        Assertion::boolean($arrived);
 //        $this->arrived = $arrived;
+//
 //        $this->personalInformation = $personalInformation;
 //    }
 //
