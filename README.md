@@ -3,13 +3,14 @@
 1. Create a new project:
 
 ```
-composer create-project matthiasnoback/high-quality-bundles-project [project-directory] dev-master
+composer create-project matthiasnoback/high-quality-bundles-project [project-directory] dev-derp
 ```
 
 > ### Project branches/versions
 >
-> Be sure to add the version requirement `dev-master` when installing this project (or checkout the `master`
+> Be sure to add the version requirement `dev-derp` when installing this project (or checkout the `derp`
 > branch if you clone it). During the workshop we will create a separate branch for the various changes that we make.
+> When asked, tell the installer **not to remove (Git) version control files**.
 
 2. When asked, supply the requested information concerning the MySQL database (make sure you run a MySQL server).
 
