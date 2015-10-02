@@ -43,4 +43,9 @@ class Sex
     {
         return $this->value;
     }
+
+    public function isFemale()
+    {
+        return $this->value === self::FEMALE;
+    }
 }

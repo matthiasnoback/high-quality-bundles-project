@@ -63,11 +63,6 @@ class Patient
 //
 //        $this->arrived = true;
 //    }
-//
-//    public function hasArrived()
-//    {
-//        return $this->arrived;
-//    }
 
     public function getId()
     {

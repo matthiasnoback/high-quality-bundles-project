@@ -32,7 +32,7 @@ class BirthDate
 //
 //    /**
 //     * @param integer $age
-//     * @return DateTime
+//     * @return BirthDate
 //     */
 //    public static function fromEstimatedAge($age)
 //    {
