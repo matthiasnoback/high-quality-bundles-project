@@ -25,4 +25,22 @@ services:
             - @mailer
             - @logger
         tags:
-            - { name: asynchronous_event_subscriber, subscribes_to: Derp\Bundle\ERBundle\Entity\WalkInRegistered }
+            - { name: asynchronous_event_subscriber, subscribes_to: Derp\Domain\Model\Patient\WalkInRegistered }
+
+# TODO move this to /Derp/Infrastructure/Cli/Resources/config/services
+    register_walk_in_console_command:
+        class: Derp\Infrastructure\Cli\RegisterWalkInCommand
+        tags:
+            - { name: console.command }
+
+# TODO move this to /Derp/Infrastructure/Web/Resources/config/services
+    patient_controller:
+        class: Derp\Infrastructure\Web\Controller\PatientController
+        calls:
+            - [setContainer, [@service_container]]
+
+# TODO move this to /Derp/Infrastructure/Api/Resources/config/services.yml
+    rest_patient_controller:
+        class: Derp\Infrastructure\Api\Controller\RestPatientController
+        calls:
+            - [setContainer, [@service_container]]

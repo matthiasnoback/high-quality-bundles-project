@@ -1,19 +1,21 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Entity;
+namespace Derp\Domain\Model\Patient;
 
+use Derp\Domain\Model\Patient\PatientId;
+use Derp\Domain\Model\Patient\PersonalInformation;
 use JMS\Serializer\Annotation as Serialize;
 
 class WalkInRegistered
 {
     /**
      * @var PatientId
-     * @Serialize\Type("Derp\Bundle\ERBundle\Entity\PatientId")
+     * @Serialize\Type("Derp\Domain\Model\Patient\PatientId")
      */
     private $patientId;
     /**
      * @var PersonalInformation
-     * @Serialize\Type("Derp\Bundle\ERBundle\Entity\PersonalInformation")
+     * @Serialize\Type("Derp\Domain\Model\Patient\PersonalInformation")
      */
     private $personalInformation;
 

@@ -1,6 +1,9 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Entity;
+namespace Derp\Domain\Model\Patient;
+
+use Derp\Domain\Model\Patient\Patient;
+use Derp\Domain\Model\Patient\PatientNotFound;
 
 interface PatientRepository
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Entity;
+namespace Derp\Domain\Model\Patient;
 
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;

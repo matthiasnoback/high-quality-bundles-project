@@ -2,8 +2,8 @@
 
 namespace Derp\Infrastructure\View;
 
-use Derp\Bundle\ERBundle\Entity\Patient;
-use Derp\Bundle\ERBundle\Entity\PatientRepository;
+use Derp\Domain\Model\Patient\Patient;
+use Derp\Domain\Model\Patient\PatientRepository;
 
 class PatientListViewModelRepository
 {

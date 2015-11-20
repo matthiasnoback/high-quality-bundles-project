@@ -22,7 +22,7 @@ class AppKernel extends Kernel
             new SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle(),
             new SimpleBus\SymfonyBridge\SimpleBusEventBusBundle(),
             new SimpleBus\SymfonyBridge\DoctrineOrmBridgeBundle(),
-            new Derp\Bundle\ERBundle\DerpERBundle(),
+            new \Derp\Infrastructure\Symfony\DerpERBundle(),
             new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
             new SimpleBus\JMSSerializerBundleBridge\SimpleBusJMSSerializerBundleBridgeBundle(),
             new SimpleBus\AsynchronousBundle\SimpleBusAsynchronousBundle(),

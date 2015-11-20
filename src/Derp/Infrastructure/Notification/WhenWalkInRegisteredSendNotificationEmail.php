@@ -2,7 +2,7 @@
 
 namespace Derp\Infrastructure\Notification;
 
-use Derp\Bundle\ERBundle\Entity\WalkInRegistered;
+use Derp\Domain\Model\Patient\WalkInRegistered;
 use Psr\Log\LoggerInterface;
 
 class WhenWalkInRegisteredSendNotificationEmail

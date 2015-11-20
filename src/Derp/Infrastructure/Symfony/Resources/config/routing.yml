@@ -1,0 +1,27 @@
+# TODO move this to /Derp/Infrastructure/Web/Resources/config/routing.yml
+patient_list:
+    path: /patients/
+    defaults:
+        _controller: patient_controller:listAction
+
+patient_find_by_last_name:
+    path: /patients/find-by-last-name/
+    defaults:
+        _controller: patient_controller:findByLastName
+
+patient_create:
+    path: /create/
+    defaults:
+        _controller: patient_controller:createAction
+
+patient_details:
+    path: /{id}/
+    defaults:
+        _controller: patient_controller:detailsAction
+
+# TODO move this to /Derp/Infrastructure/Api/Resources/config/routing.yml
+rest_patient_register_walk_in:
+    path: /rest/patients/register-walk-in
+    methods: [POST]
+    defaults:
+        _controller: rest_patient_controller:registerWalkInAction

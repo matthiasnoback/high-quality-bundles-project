@@ -1,8 +1,11 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Entity;
+namespace Derp\Domain\Model\Patient;
 
 use Assert\Assertion;
+use Derp\Domain\Model\Patient\PatientId;
+use Derp\Domain\Model\Patient\PersonalInformation;
+use Derp\Domain\Model\Patient\WalkInRegistered;
 use Doctrine\ORM\Mapping as ORM;
 use SimpleBus\Message\Recorder\ContainsRecordedMessages;
 use SimpleBus\Message\Recorder\PrivateMessageRecorderCapabilities;

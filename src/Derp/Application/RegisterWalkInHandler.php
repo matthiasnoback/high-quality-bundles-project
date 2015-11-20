@@ -2,18 +2,18 @@
 
 namespace Derp\Application;
 
-use Derp\Bundle\ERBundle\Entity\BirthDate;
-use Derp\Bundle\ERBundle\Entity\FullName;
-use Derp\Bundle\ERBundle\Entity\Patient;
-use Derp\Bundle\ERBundle\Entity\PatientId;
-use Derp\Bundle\ERBundle\Entity\PatientRepository;
-use Derp\Bundle\ERBundle\Entity\PersonalInformation;
-use Derp\Bundle\ERBundle\Entity\Sex;
+use Derp\Domain\Model\Patient\BirthDate;
+use Derp\Domain\Model\Patient\FullName;
+use Derp\Domain\Model\Patient\Patient;
+use Derp\Domain\Model\Patient\PatientId;
+use Derp\Domain\Model\Patient\PatientRepository;
+use Derp\Domain\Model\Patient\PersonalInformation;
+use Derp\Domain\Model\Patient\Sex;
 
 class RegisterWalkInHandler
 {
     /**
-     * @var PatientRepository
+     * @var \Derp\Domain\Model\Patient\PatientRepository
      */
     private $patientRepository;
 

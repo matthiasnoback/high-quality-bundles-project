@@ -1,24 +1,18 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Controller;
+namespace Derp\Infrastructure\Web\Controller;
 
-use Derp\Bundle\ERBundle\Entity\PatientId;
-use Derp\Bundle\ERBundle\Entity\PatientNotFound;
-use Derp\Bundle\ERBundle\Form\CreatePatientType;
+use Derp\Domain\Model\Patient\PatientId;
+use Derp\Domain\Model\Patient\PatientNotFound;
+use Derp\Infrastructure\Web\Form\CreatePatientType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * @Route("/patients")
- */
 class PatientController extends Controller
 {
     /**
-     * @Route("/", name="patient_list")
-     * @Template()
+     * @Template("@Derp/Patient/list.html.twig")
      */
     public function listAction()
     {
@@ -32,8 +26,7 @@ class PatientController extends Controller
     }
 
     /**
-     * @Route("/find-by-last-name/", name="patient_find_by_last_name")
-     * @Template("@DerpERBundle/Resources/views/Patient/list.html.twig")
+     * @Template("@Derp/Patient/list.html.twig")
      */
     public function findByLastName(Request $request)
     {
@@ -47,13 +40,11 @@ class PatientController extends Controller
     }
 
     /**
-     * @Route("/create/", name="patient_create")
-     * @Method({"GET", "POST"})
-     * @Template()
+     * @Template("@Derp/Patient/create.html.twig")
      */
     public function createAction(Request $request)
     {
-        $form = $this->createForm(new CreatePatientType());
+        $form = $this->createForm(new \Derp\Infrastructure\Web\Form\CreatePatientType());
 
         $form->handleRequest($request);
 
@@ -71,9 +62,7 @@ class PatientController extends Controller
     }
 
     /**
-     * @Route("/{id}/", name="patient_details")
-     * @Method("GET")
-     * @Template()
+     * @Template("@Derp/Patient/details.html.twig")
      */
     public function detailsAction($id)
     {

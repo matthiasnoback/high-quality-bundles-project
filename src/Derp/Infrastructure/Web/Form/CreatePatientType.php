@@ -1,9 +1,9 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Form;
+namespace Derp\Infrastructure\Web\Form;
 
 use Derp\Application\RegisterWalkIn;
-use Derp\Bundle\ERBundle\Entity\Sex;
+use Derp\Domain\Model\Patient\Sex;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;

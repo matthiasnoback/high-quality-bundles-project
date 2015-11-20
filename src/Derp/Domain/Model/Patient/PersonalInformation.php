@@ -1,7 +1,10 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Entity;
+namespace Derp\Domain\Model\Patient;
 
+use Derp\Domain\Model\Patient\Sex;
+use Derp\Domain\Model\Patient\BirthDate;
+use Derp\Domain\Model\Patient\FullName;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use JMS\Serializer\Annotation as Serialize;
@@ -14,7 +17,7 @@ class PersonalInformation
     /**
      * @ORM\Embedded(class="FullName", columnPrefix=false)
      * @Assert\Valid()
-     * @Serialize\Type("Derp\Bundle\ERBundle\Entity\FullName")
+     * @Serialize\Type("Derp\Domain\Model\Patient\FullName")
      * @var FullName
      */
     private $name;
@@ -22,7 +25,7 @@ class PersonalInformation
     /**
      * @ORM\Embedded(class="BirthDate", columnPrefix=false)
      * @Assert\Valid()
-     * @Serialize\Type("Derp\Bundle\ERBundle\Entity\BirthDate")
+     * @Serialize\Type("Derp\Domain\Model\Patient\BirthDate")
      * @var BirthDate
      */
     private $dateOfBirth;
@@ -30,7 +33,7 @@ class PersonalInformation
     /**
      * @ORM\Embedded(class="Sex", columnPrefix=false)
      * @Assert\Valid()
-     * @Serialize\Type("Derp\Bundle\ERBundle\Entity\Sex")
+     * @Serialize\Type("Derp\Domain\Model\Patient\Sex")
      * @var Sex
      */
     private $sex;

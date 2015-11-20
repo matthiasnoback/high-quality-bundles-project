@@ -35,8 +35,6 @@ twig:
     strict_variables: "%kernel.debug%"
     form:
         resources: ['bootstrap_3_layout.html.twig']
-    #paths:
-    #    "%kernel.root_dir%/../src/User/Infrastructure/Web/views": User
 
 # Assetic Configuration
 assetic:
@@ -67,14 +65,14 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
-        #mappings:
-        #    user_domain_model:
-        #        mapping: true
-        #        type: annotation
-        #        dir: "%kernel.root_dir%/../src/User/Domain/Model"
-        #        alias: ~
-        #        prefix: User\Domain\Model
-        #        is_bundle: false
+        mappings:
+            derp_domain_model:
+                mapping: true
+                type: annotation
+                dir: "%kernel.root_dir%/../src/Derp/Domain/Model"
+                alias: ~
+                prefix: Derp\Domain\Model
+                is_bundle: false
 
 swiftmailer:
     disable_delivery: true

@@ -1,22 +1,14 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Controller;
+namespace Derp\Infrastructure\Api\Controller;
 
 use Derp\Application\RegisterWalkIn;
-use JMS\Serializer\DeserializationContext;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @Route(path="/rest/patients")
- */
 class RestPatientController extends Controller
 {
-    /**
-     * @Route(path="/register-walk-in", methods={"POST"})
-     */
     public function registerWalkInAction(Request $request)
     {
         $request->setRequestFormat('json');

@@ -1,9 +1,9 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Command;
+namespace Derp\Infrastructure\Cli;
 
 use Derp\Application\RegisterWalkIn;
-use Derp\Bundle\ERBundle\Entity\PatientId;
+use Derp\Domain\Model\Patient\PatientId;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

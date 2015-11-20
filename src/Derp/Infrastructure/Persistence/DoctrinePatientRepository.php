@@ -2,10 +2,10 @@
 
 namespace Derp\Infrastructure\Persistence;
 
-use Derp\Bundle\ERBundle\Entity\Patient;
-use Derp\Bundle\ERBundle\Entity\PatientId;
-use Derp\Bundle\ERBundle\Entity\PatientNotFound;
-use Derp\Bundle\ERBundle\Entity\PatientRepository;
+use Derp\Domain\Model\Patient\Patient;
+use Derp\Domain\Model\Patient\PatientId;
+use Derp\Domain\Model\Patient\PatientNotFound;
+use Derp\Domain\Model\Patient\PatientRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;

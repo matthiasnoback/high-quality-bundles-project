@@ -1,6 +1,6 @@
 <?php
 
-namespace Derp\Bundle\ERBundle\Entity;
+namespace Derp\Domain\Model\Patient;
 
 class PatientNotFound extends \RuntimeException
 {
