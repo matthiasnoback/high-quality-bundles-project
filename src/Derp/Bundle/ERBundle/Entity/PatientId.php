@@ -3,9 +3,13 @@
 namespace Derp\Bundle\ERBundle\Entity;
 
 use Rhumsaa\Uuid\Uuid;
+use JMS\Serializer\Annotation as Serialize;
 
 class PatientId
 {
+    /**
+     * @Serialize\Type("string")
+     */
     private $id;
 
     private function __construct()

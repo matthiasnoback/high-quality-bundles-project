@@ -23,5 +23,6 @@ services:
         class: Derp\Infrastructure\Notification\WhenWalkInRegisteredSendNotificationEmail
         arguments:
             - @mailer
+            - @logger
         tags:
-            - { name: event_subscriber, subscribes_to: Derp\Bundle\ERBundle\Entity\WalkInRegistered }
+            - { name: asynchronous_event_subscriber, subscribes_to: Derp\Bundle\ERBundle\Entity\WalkInRegistered }

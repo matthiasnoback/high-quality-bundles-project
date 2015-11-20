@@ -1,7 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    #- { resource: rabbitmq.yml }
+    - { resource: rabbitmq.yml }
 
 parameters:
     locale: en

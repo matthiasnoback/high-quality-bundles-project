@@ -4,6 +4,7 @@ namespace Derp\Bundle\ERBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use JMS\Serializer\Annotation as Serialize;
 
 /**
  * @ORM\Embeddable()
@@ -13,6 +14,7 @@ class PersonalInformation
     /**
      * @ORM\Embedded(class="FullName", columnPrefix=false)
      * @Assert\Valid()
+     * @Serialize\Type("Derp\Bundle\ERBundle\Entity\FullName")
      * @var FullName
      */
     private $name;
@@ -20,6 +22,7 @@ class PersonalInformation
     /**
      * @ORM\Embedded(class="BirthDate", columnPrefix=false)
      * @Assert\Valid()
+     * @Serialize\Type("Derp\Bundle\ERBundle\Entity\BirthDate")
      * @var BirthDate
      */
     private $dateOfBirth;
@@ -27,6 +30,7 @@ class PersonalInformation
     /**
      * @ORM\Embedded(class="Sex", columnPrefix=false)
      * @Assert\Valid()
+     * @Serialize\Type("Derp\Bundle\ERBundle\Entity\Sex")
      * @var Sex
      */
     private $sex;

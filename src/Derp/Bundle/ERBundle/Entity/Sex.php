@@ -4,6 +4,7 @@ namespace Derp\Bundle\ERBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use JMS\Serializer\Annotation as Serialize;
 
 /**
  * @ORM\Embeddable()
@@ -19,6 +20,7 @@ class Sex
     /**
      * @ORM\Column(name="sex", type="string", length=10)
      * @Assert\Choice(choices={"male", "female", "intersex"})
+     * @Serialize\Type("string")
      */
     private $value;
 
