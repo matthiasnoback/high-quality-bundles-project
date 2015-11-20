@@ -30,71 +30,47 @@ class PersonalInformation
      * @var Sex
      */
     private $sex;
-//
-//    /**
-//     * @param FullName $name
-//     * @param BirthDate $dateOfBirth
-//     * @param Sex $sex
-//     */
-//    private function __construct(FullName $name, BirthDate $dateOfBirth, Sex $sex)
-//    {
-//        $this->name = $name;
-//        $this->dateOfBirth = $dateOfBirth;
-//        $this->sex = $sex;
-//    }
-//
-//    /**
-//     * @param FullName $name
-//     * @param BirthDate $date
-//     * @param Sex $sex
-//     * @return static
-//     */
-//    public static function fromDetails(FullName $name, BirthDate $date, Sex $sex)
-//    {
-//        return new static($name, $date, $sex);
-//    }
-//
-//    /**
-//     * @param Sex $sex
-//     * @param int $estimatedAge
-//     * @return static
-//     */
-//    public static function anonymous(Sex $sex, $estimatedAge)
-//    {
-//        $name = FullName::fromParts('John', 'Doe');
-//        if ($sex->isFemale()) {
-//            $name = FullName::fromParts('Jane', 'Doe');
-//        }
-//
-//        return new static(
-//            $name,
-//            BirthDate::fromEstimatedAge($estimatedAge),
-//            $sex
-//        );
-//    }
 
     /**
-     * compromise
+     * @param FullName $name
+     * @param BirthDate $dateOfBirth
+     * @param Sex $sex
      */
-    public function setName($name)
+    private function __construct(FullName $name, BirthDate $dateOfBirth, Sex $sex)
     {
         $this->name = $name;
-    }
-
-    /**
-     * compromise
-     */
-    public function setDateOfBirth($dateOfBirth)
-    {
         $this->dateOfBirth = $dateOfBirth;
+        $this->sex = $sex;
     }
 
     /**
-     * compromise
+     * @param FullName $name
+     * @param BirthDate $date
+     * @param Sex $sex
+     * @return static
      */
-    public function setSex($sex)
+    public static function fromDetails(FullName $name, BirthDate $date, Sex $sex)
     {
-        $this->sex = $sex;
+        return new static($name, $date, $sex);
+    }
+
+    /**
+     * @param Sex $sex
+     * @param int $estimatedAge
+     * @return static
+     */
+    public static function anonymous(Sex $sex, $estimatedAge)
+    {
+        $name = FullName::fromParts('John', 'Doe');
+        if ($sex->isFemale()) {
+            $name = FullName::fromParts('Jane', 'Doe');
+        }
+
+        return new static(
+            $name,
+            BirthDate::fromEstimatedAge($estimatedAge),
+            $sex
+        );
     }
 
     /**

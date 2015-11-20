@@ -2,8 +2,8 @@
 
 namespace Derp\Bundle\ERBundle\Controller;
 
+use Derp\Bundle\ERBundle\Entity\PatientNotFound;
 use Derp\Bundle\ERBundle\Form\CreatePatientType;
-use Derp\Bundle\ERBundle\Entity\Patient;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -22,10 +22,8 @@ class PatientController extends Controller
     public function listAction()
     {
         $patients = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository(Patient::class)
-            ->findAll();
+            ->get('patient_list_view_model_repository')
+            ->all();
 
         return array(
             'patients' => $patients
@@ -39,12 +37,8 @@ class PatientController extends Controller
     public function findByLastName(Request $request)
     {
         $patients = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository(Patient::class)
-            ->findBy(
-                ['personalInformation.name.lastName' => $request->query->get('lastName')]
-            );
+            ->get('patient_repository')
+            ->byLastName($request->query->get('lastName'));
 
         return array(
             'patients' => $patients
@@ -58,25 +52,16 @@ class PatientController extends Controller
      */
     public function createAction(Request $request)
     {
-        $patient = new Patient();
-
-        $form = $this->createForm(new CreatePatientType(), $patient);
+        $form = $this->createForm(new CreatePatientType());
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($patient);
-            $em->flush();
+            $command = $form->getData();
+            $command->id = (string) $this->get('patient_repository')->generateIdentity();
+            $this->get('command_bus')->handle($command);
 
-            $message = \Swift_Message::newInstance(
-                'New patient',
-                'Indication: ' . $patient->getIndication()
-            );
-            $message->setTo('triage-nurse@derp.nl');
-            $this->get('mailer')->send($message);
-
-            return $this->redirect($this->generateUrl('patient_list'));
+            return $this->redirect($this->generateUrl('patient_details', ['id' => $id]));
         }
 
         return array(
@@ -91,14 +76,13 @@ class PatientController extends Controller
      */
     public function detailsAction($id)
     {
-        $patient = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository(Patient::class)
-            ->find($id);
-
-        if ($patient === null) {
-            throw $this->createNotFoundException();
+        try {
+            $patient = $this->get('patient_repository')->byId($id);
+        } catch (PatientNotFound $exception) {
+            throw $this->createNotFoundException(
+                'Patient not found',
+                $exception
+            );
         }
 
         return array(

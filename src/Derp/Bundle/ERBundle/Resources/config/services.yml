@@ -1,0 +1,21 @@
+services:
+    register_walk_in_handler:
+        class: Derp\Application\RegisterWalkInHandler
+        arguments:
+            - @patient_repository
+            - @mailer
+        tags:
+            - { name: command_handler, handles: Derp\Application\RegisterWalkIn }
+
+    doctrine_patient_repository:
+        class: Derp\Infrastructure\Persistence\DoctrinePatientRepository
+        arguments:
+            - @doctrine
+
+    patient_repository:
+        alias: doctrine_patient_repository
+
+    patient_list_view_model_repository:
+        class: Derp\Infrastructure\View\PatientListViewModelRepository
+        arguments:
+            - @patient_repository

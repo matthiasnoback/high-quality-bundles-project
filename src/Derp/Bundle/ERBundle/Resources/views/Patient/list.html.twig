@@ -24,9 +24,9 @@
         {% for patient in patients %}
             <tr>
                 <td>
-                    <a href="{{ path('patient_details', { id: patient.id }) }}">{{ patient.personalInformation.name.firstName ~ ' ' ~ patient.personalInformation.name.lastName }}</a></td>
-                <td>{{ patient.personalInformation.sex.sex }}</td>
-                <td>{{ patient.hasArrived ? 'yes' : 'no' }}</td>
+                    <a href="{{ path('patient_details', { id: patient.id }) }}">{{ patient.name }}</a></td>
+                <td>{{ patient.sex }}</td>
+                <td>{{ patient.hasArrived }}</td>
             </tr>
         {% else %}
             <tr>

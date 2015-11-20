@@ -7,14 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="Derp\Bundle\ERBundle\Entity\PatientRepository")
+ * @ORM\Entity()
  */
 class Patient
 {
     /**
      * @ORM\Id()
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue()
+     * @ORM\Column(type="string")
      */
     private $id;
 
@@ -35,34 +34,34 @@ class Patient
      */
     private $personalInformation;
 
-//    private function __construct(PersonalInformation $personalInformation, $indication, $arrived)
-//    {
-//        Assertion::string($indication);
-//        Assertion::notEmpty($indication);
-//        $this->indication = $indication;
-//
-//        Assertion::boolean($arrived);
-//        $this->arrived = $arrived;
-//
-//        $this->personalInformation = $personalInformation;
-//    }
-//
-//    public static function walkIn(PersonalInformation $personalInformation, $indication)
-//    {
-//        return new Patient($personalInformation, $indication, true);
-//    }
-//
-//    public static function announce(PersonalInformation $personalInformation, $indication)
-//    {
-//        return new Patient($personalInformation, $indication, false);
-//    }
-//
-//    public function registerArrival()
-//    {
-//        \Assert\that($this->arrived)->false('The patient already arrived');
-//
-//        $this->arrived = true;
-//    }
+    private function __construct(PatientId $patientId, PersonalInformation $personalInformation, $indication, $arrived)
+    {
+        Assertion::string($indication);
+        Assertion::notEmpty($indication);
+        $this->indication = $indication;
+
+        Assertion::boolean($arrived);
+        $this->arrived = $arrived;
+
+        $this->personalInformation = $personalInformation;
+    }
+
+    public static function walkIn(PatientId $patientId, PersonalInformation $personalInformation, $indication)
+    {
+        return new Patient($patientId, $personalInformation, $indication, true);
+    }
+
+    public static function announce(PatientId $patientId, PersonalInformation $personalInformation, $indication)
+    {
+        return new Patient($patientId, $personalInformation, $indication, false);
+    }
+
+    public function registerArrival()
+    {
+        \Assert\that($this->arrived)->false('The patient already arrived');
+
+        $this->arrived = true;
+    }
 
     public function getId()
     {
@@ -82,29 +81,5 @@ class Patient
     public function getPersonalInformation()
     {
         return $this->personalInformation;
-    }
-
-    /**
-     * compromise
-     */
-    public function setIndication($indication)
-    {
-        $this->indication = $indication;
-    }
-
-    /**
-     * compromise
-     */
-    public function setArrived($arrived)
-    {
-        $this->arrived = $arrived;
-    }
-
-    /**
-     * compromise
-     */
-    public function setPersonalInformation(PersonalInformation $personalInformation)
-    {
-        $this->personalInformation = $personalInformation;
     }
 }

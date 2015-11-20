@@ -22,15 +22,12 @@ class Sex
      */
     private $value;
 
-//    public function __construct($sex)
-//    {
-//        $this->setSex($sex);
-//    }
+    public function __construct($sex)
+    {
+        $this->setSex($sex);
+    }
 
-    /**
-     * compromise
-     */
-    public function setSex($sex)
+    private function setSex($sex)
     {
         if ($sex !== static::MALE && $sex !== static::FEMALE && $sex !== static::INTERSEX) {
             throw new \InvalidArgumentException('Invalid sex provided');

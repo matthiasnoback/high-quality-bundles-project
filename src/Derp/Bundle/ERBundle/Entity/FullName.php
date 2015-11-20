@@ -21,34 +21,18 @@ class FullName
      * @Assert\NotBlank()
      */
     private $lastName;
-//
-//    private function __construct()
-//    {
-//    }
-//
-//    public static function fromParts($firstName, $lastName)
-//    {
-//        $patient = new static();
-//        $patient->firstName = $firstName;
-//        $patient->lastName = $lastName;
-//
-//        return $patient;
-//    }
 
-    /**
-     * compromise
-     */
-    public function setFirstName($firstName)
+    private function __construct()
     {
-        $this->firstName = $firstName;
     }
 
-    /**
-     * compromise
-     */
-    public function setLastName($lastName)
+    public static function fromParts($firstName, $lastName)
     {
-        $this->lastName = $lastName;
+        $patient = new static();
+        $patient->firstName = $firstName;
+        $patient->lastName = $lastName;
+
+        return $patient;
     }
 
     /**
