@@ -71,11 +71,4 @@ class DoctrinePatientRepository implements PatientRepository
 
         return $patient;
     }
-
-    public function generateIdentity()
-    {
-        return PatientId::fromString(
-            (string) Uuid::uuid4()
-        );
-    }
 }

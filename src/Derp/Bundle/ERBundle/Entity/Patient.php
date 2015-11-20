@@ -4,13 +4,17 @@ namespace Derp\Bundle\ERBundle\Entity;
 
 use Assert\Assertion;
 use Doctrine\ORM\Mapping as ORM;
+use SimpleBus\Message\Recorder\ContainsRecordedMessages;
+use SimpleBus\Message\Recorder\PrivateMessageRecorderCapabilities;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity()
  */
-class Patient
+class Patient implements ContainsRecordedMessages
 {
+    use PrivateMessageRecorderCapabilities;
+
     /**
      * @ORM\Id()
      * @ORM\Column(type="string")
@@ -36,6 +40,7 @@ class Patient
 
     private function __construct(PatientId $patientId, PersonalInformation $personalInformation, $indication, $arrived)
     {
+        $this->id = (string) $patientId;
         Assertion::string($indication);
         Assertion::notEmpty($indication);
         $this->indication = $indication;
@@ -48,7 +53,11 @@ class Patient
 
     public static function walkIn(PatientId $patientId, PersonalInformation $personalInformation, $indication)
     {
-        return new Patient($patientId, $personalInformation, $indication, true);
+        $patient = new Patient($patientId, $personalInformation, $indication, true);
+
+        $patient->record(new WalkInRegistered($patientId, $personalInformation, $indication));
+
+        return $patient;
     }
 
     public static function announce(PatientId $patientId, PersonalInformation $personalInformation, $indication)

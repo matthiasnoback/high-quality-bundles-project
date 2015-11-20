@@ -32,4 +32,6 @@ class RegisterWalkIn
      * @Assert\NotBlank()
      */
     public $indication;
+
+    public $id;
 }

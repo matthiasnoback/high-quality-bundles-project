@@ -2,6 +2,7 @@
 
 namespace Derp\Bundle\ERBundle\Controller;
 
+use Derp\Bundle\ERBundle\Entity\PatientId;
 use Derp\Bundle\ERBundle\Entity\PatientNotFound;
 use Derp\Bundle\ERBundle\Form\CreatePatientType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -58,10 +59,10 @@ class PatientController extends Controller
 
         if ($form->isValid()) {
             $command = $form->getData();
-            $command->id = (string) $this->get('patient_repository')->generateIdentity();
+            $command->id = (string) PatientId::generate();
             $this->get('command_bus')->handle($command);
 
-            return $this->redirect($this->generateUrl('patient_details', ['id' => $id]));
+            return $this->redirect($this->generateUrl('patient_details', ['id' => $command->id]));
         }
 
         return array(

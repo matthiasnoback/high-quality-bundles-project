@@ -13,17 +13,12 @@ use Derp\Bundle\ERBundle\Entity\Sex;
 class RegisterWalkInHandler
 {
     /**
-     * @var \Swift_Mailer
-     */
-    private $mailer;
-    /**
      * @var PatientRepository
      */
     private $patientRepository;
 
-    public function __construct(PatientRepository $patientRepository, \Swift_Mailer $mailer)
+    public function __construct(PatientRepository $patientRepository)
     {
-        $this->mailer = $mailer;
         $this->patientRepository = $patientRepository;
     }
 
@@ -40,12 +35,5 @@ class RegisterWalkInHandler
         );
 
         $this->patientRepository->add($patient);
-
-        $message = \Swift_Message::newInstance(
-            'New patient',
-            'Indication: ' . $patient->getIndication()
-        );
-        $message->setTo('triage-nurse@derp.nl');
-        $this->mailer->send($message);
     }
 }

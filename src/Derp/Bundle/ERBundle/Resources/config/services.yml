@@ -3,7 +3,6 @@ services:
         class: Derp\Application\RegisterWalkInHandler
         arguments:
             - @patient_repository
-            - @mailer
         tags:
             - { name: command_handler, handles: Derp\Application\RegisterWalkIn }
 
@@ -19,3 +18,10 @@ services:
         class: Derp\Infrastructure\View\PatientListViewModelRepository
         arguments:
             - @patient_repository
+
+    when_walk_in_registered_send_notification_email:
+        class: Derp\Infrastructure\Notification\WhenWalkInRegisteredSendNotificationEmail
+        arguments:
+            - @mailer
+        tags:
+            - { name: event_subscriber, subscribes_to: Derp\Bundle\ERBundle\Entity\WalkInRegistered }

@@ -27,9 +27,4 @@ interface PatientRepository
      * @throws PatientNotFound
      */
     public function byId($id);
-
-    /**
-     * @return PatientId
-     */
-    public function generateIdentity();
 }
